@@ -11,6 +11,7 @@ import ProjectsComponent from '../components/ProjectsComponent'
 const MainWrapper = styled.div`
   // display: grid;
   // grid-template-columns: repeat(3, 1fr);
+  background-color: #265170;
 `
 
 
