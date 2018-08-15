@@ -28,7 +28,7 @@ const MainNav = styled.nav`
         display: none;
     }
 
-    @media (max-width: 350px) {
+    @media (max-width: 500px) {
         display: flex;
         /* flex-direction: column; */
         align-content: center;
