@@ -16,6 +16,7 @@ const AddintionalWrapper = styled.div`
     height: 100%;
     // border-top: #416B89 solid 2px;
     // clear: both;
+    
 
 `
 

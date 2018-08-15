@@ -14,7 +14,18 @@ display: flex;
 align-items: center;
 justify-content: flex-end;
 padding-right: 50px;
+z-index: 1;
+
+
 `
+const MainNav = styled.nav`
+    /* color: white; */
+    a {
+        color: white;
+        text-decoration: none;
+    }
+`
+
 
 
 
@@ -23,12 +34,12 @@ const HeaderComponent = ({}) => {
         <Wrapper>
             
             {/* </PiotrWolski> */}
-            <nav>
+            <MainNav>
                 <a href="#about">About me</a> |
                 <a href="#contact">Contact</a> |
                 <a href="#skills">My skills</a> |
                 <a href="#projects">Projects</a>
-            </nav>
+            </MainNav>
         </Wrapper>   
     )
   }
