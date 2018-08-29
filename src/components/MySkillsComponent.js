@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import TextComponent from './TextComponent/TextComponent.js';
 
 
 const Wrapper = styled.div`
@@ -21,7 +22,9 @@ const MySkillsComponent = ({}) => {
     return(
         <Wrapper>
             <AddintionalWrapper>
-                MySkillsComponent
+                {/* MySkillsComponent */}
+                <TextComponent></TextComponent>
+            
             </AddintionalWrapper>
         </Wrapper>   
     )
