@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const Wrapper = styled.div`
-background: url(/../img/bg_laptop_coffee.jpg) no-repeat center center fixed; 
-width: 100%;
-height: 800px;
-position: relative;
-top: 75px;
+    background-image: url(./../img/bg_laptop_coffee.jpg) no-repeat center center fixed; 
+    width: 100%;
+    height: 800px;
+    position: relative;
+    top: 75px;
 `
 
 const AddintionalWrapper = styled.div`
@@ -16,11 +15,10 @@ const AddintionalWrapper = styled.div`
     height: 100%;
     // border-top: #416B89 solid 2px;
     // clear: both;
-    
 
 `
 
-const MainComponent = ({}) => {
+const MainComponent = () => {
     return(
         <Wrapper>
             <AddintionalWrapper>
@@ -30,3 +28,4 @@ const MainComponent = ({}) => {
     )
   }
   export default MainComponent;
+
