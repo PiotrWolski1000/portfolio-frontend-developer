@@ -4,13 +4,27 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: `gatsby-source-datocms`,
       options: {
-        spaceId: 'd0v97bwihzbp',
-        accessToken: '182b0d1015e9708603f95a5af715b69733eac2fa67956ba6405860a62b87c58a',
-      }
+        // You can find your read-only API token under the Settings > API tokens
+        // section of your administrative area:
+        apiToken: `be9354083b6bcdd223b7ac822103d2`,
+  
+        // If you are working on development/staging environment, you might want to
+        // preview the latest version of records instead of the published one:
+        previewMode: false,
+  
+        // Disable automatic reloading of content when some change occurs on DatoCMS:
+        disableLiveReload: false,
+  
+        // Custom API base URL
+        // apiUrl: 'https://site-api.datocms.com',
+      },
     },
-    'gatsby-plugin-react-helmet',
-
   ],
 }
+
+
+
+
+
