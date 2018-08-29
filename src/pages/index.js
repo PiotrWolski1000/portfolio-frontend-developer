@@ -8,6 +8,11 @@ import MySkillsComponent from '../components/MySkillsComponent';
 import FooterComponent from '../components/FooterComponent';
 import ContactComponent from '../components/ContactComponent';
 import ProjectsComponent from '../components/ProjectsComponent'
+
+
+
+
+
 const MainWrapper = styled.div`
   // display: grid;
   // grid-template-columns: repeat(3, 1fr);
@@ -16,12 +21,12 @@ const MainWrapper = styled.div`
 `
 
 
-const Index = () => {
-  console.log('hello world')
+const Index = ({data}) => {
+  console.log(data.allDatoCmsMaincomponent.edges[0].node.mainpicture.url)
   return (
     <MainWrapper>
       <HeaderComponent/>
-      <MainComponent/>
+      <MainComponent MainComponentData = {data}/>
       <AboutComponent/>
       <MySkillsComponent/>
       <ProjectsComponent/>
@@ -35,8 +40,15 @@ const Index = () => {
 export default Index;
 
 
-// export const query = graphql`
-//   query section1{
-    
-//   }
-// `
+export const query = graphql`
+query onepage {
+  allDatoCmsMaincomponent {
+    edges{
+      node{
+        mainpicture{
+          url
+        }
+      }
+    }
+  }
+}`
