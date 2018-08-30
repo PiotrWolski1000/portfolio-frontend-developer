@@ -18,10 +18,11 @@ const AddintionalWrapper = styled.div`
 
 `
 
-const MainComponent = () => {
+const MainComponent = ({data}) => {
     return(
         <Wrapper>
             <AddintionalWrapper>
+                
                 MainComponent
             </AddintionalWrapper>
         </Wrapper>   
