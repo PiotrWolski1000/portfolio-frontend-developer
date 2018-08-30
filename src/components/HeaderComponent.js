@@ -6,7 +6,7 @@ import $ from "jquery";
 const Wrapper = styled.div`
     background-color: #042740;
     width: 100%;
-    height: 75px;
+    height: auto;
     border-bottom: #416B89 solid 2px;
     position: fixed;
     top: 0px;
@@ -14,33 +14,54 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 25px;
     z-index: 1;
 `
+
+const Menu = styled.div`
+    .cross {
+        text-align: center;
+        width: 100%;
+        height: auto;
+        background: purple; 
+    }
+`
 const MainNav = styled.nav`
+    display: block;
+
     a {
+        display: none;
         color: white;
         text-decoration: none;
-        padding-left: 20px;
+        text-align: center;
+    }
+
+    #toggle {/* checkbox hidden, is a trigger for showing off the block of <a> elements */
+        display: none;
     }
 
     ${Burger} svg {
+        /* at this moment(big resolution) we do not want to show our hamburger icon */
         display: none;
     }
 
     @media (max-width: 500px) {
         display: flex;
-        /* flex-direction: column; */
         align-content: center;
-        align-items: flex-end;
-
+        
+        #toggle:checked + .menu {
+            display: block;
+        }
+        
         ${Burger} {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             svg {
                 display: flex;
-                /* align-items: center; */
-                justify-content: center;
                 width: 50px;
-                height: 150px;
+                height: 100px;
                 cursor: pointer;
                 -webkit-transform: translate3d(0, 0, 0);
                 -moz-transform: translate3d(0, 0, 0);
@@ -60,6 +81,7 @@ const MainNav = styled.nav`
                 stroke: #fff6e6;
                 stroke-dashoffset: 0px;
             }
+            
             path#top,
             path#bottom {
                 stroke-dasharray: 240px 950px;
@@ -78,8 +100,18 @@ const MainNav = styled.nav`
             }
         }
 
-        a {
-            display: none;
+        .cross a {
+            width: 100%;
+            /* display: none; */
+            display: block;
+            /* background: grey; */
+            padding-bottom: 5px;
+            text-indent: 10px;
+        }
+
+        .cross a:hover {
+            background: #042740;
+            text-decoration: underline;
         }
     }
 
@@ -98,20 +130,21 @@ const HeaderComponent = ({}) => {
                 <Burger onClick={()=> {
                           return $("div").toggleClass("cross");
                 }}>
-                    <div>
-                    <svg viewBox="0 0 800 600">
+
+                    <svg htmlFor="toggle" viewBox="0 0 800 600">
                         <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
                         <path d="M300,320 L540,320" id="middle"></path>
                         <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
                     </svg>
-                    </div>
+                    <input type="checkbox" id="toggle"/>
+                    
+                    <Menu className = "menu">
+                        <a href="#about">About</a> 
+                        <a href="#contact">Contact</a> 
+                        <a href="#skills">Skills</a> 
+                        <a href="#projects">Projects</a>
+                    </Menu>
                 </Burger>
-                {/* <ul> */}
-                <a href="#about">About</a> 
-                <a href="#contact">Contact</a> 
-                <a href="#skills">Skills</a> 
-                <a href="#projects">Projects</a>
-                {/* </ul> */}
             </MainNav>
         </Wrapper>   
     )
