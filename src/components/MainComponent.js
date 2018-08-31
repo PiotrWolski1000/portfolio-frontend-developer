@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    background-image: url(./../img/bg_laptop_coffee.jpg) no-repeat center center fixed; 
+    /* background-image: url(./../img/bg_laptop_coffee.jpg) no-repeat center center fixed;  */
     width: 100%;
     height: 800px;
     position: relative;
@@ -10,17 +10,24 @@ const Wrapper = styled.div`
 `
 
 const AddintionalWrapper = styled.div`
-    // width: 95%;
+    /* width: 95%; */
     margin: 0 auto;
     height: 100%;
-    // border-top: #416B89 solid 2px;
-    // clear: both;
+    /* // border-top: #416B89 solid 2px; */
+    /* // clear: both; */
 
 `
 
-const MainComponent = ({data}) => {
+const MainComponent = ({MainComponentData}) => {
+    console.log(MainComponentData)
     return(
-        <Wrapper>
+        <Wrapper style={{
+            backgroundImage: 'url(' + MainComponentData.mainpicture.url + ')', 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
+        }
+        }>
             <AddintionalWrapper>
                 
                 MainComponent
