@@ -6,6 +6,7 @@ import $ from "jquery";
 const Wrapper = styled.div`
     background-color: #042740;
     width: 100%;
+    min-height: 75px;
     height: auto;
     border-bottom: #416B89 solid 2px;
     position: fixed;
@@ -29,7 +30,7 @@ const MainNav = styled.nav`
     display: block;
 
     a {
-        display: none;
+        padding-right: 15px;
         color: white;
         text-decoration: none;
         text-align: center;
@@ -44,7 +45,7 @@ const MainNav = styled.nav`
         display: none;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
         display: flex;
         align-content: center;
         
@@ -61,7 +62,7 @@ const MainNav = styled.nav`
             svg {
                 display: flex;
                 width: 50px;
-                height: 100px;
+                height: 75px;
                 cursor: pointer;
                 -webkit-transform: translate3d(0, 0, 0);
                 -moz-transform: translate3d(0, 0, 0);
@@ -99,13 +100,14 @@ const MainNav = styled.nav`
                 stroke-dasharray: 1px 220px;
             }
         }
-
+        a {
+            /* the reason of this line is that nav disappear on also on large devices*/
+            display: none;
+        }
         .cross a {
             width: 100%;
-            /* display: none; */
             display: block;
-            /* background: grey; */
-            padding-bottom: 5px;
+            padding-bottom: 10px;
             text-indent: 10px;
         }
 
