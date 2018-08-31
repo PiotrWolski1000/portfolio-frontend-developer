@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
     /* background-image: url(./../img/bg_laptop_coffee.jpg) no-repeat center center fixed;  */
     width: 100%;
-    height: 800px;
+    min-height: 500px;
     position: relative;
     top: 75px;
 `
@@ -18,6 +18,10 @@ const AddintionalWrapper = styled.div`
 
 `
 
+const H1 = styled.div`
+    color: white;
+`
+
 const MainComponent = ({MainComponentData}) => {
     console.log(MainComponentData)
     return(
@@ -29,8 +33,9 @@ const MainComponent = ({MainComponentData}) => {
         }
         }>
             <AddintionalWrapper>
-                
-                MainComponent
+
+            <H1>{MainComponentData.maincomponenttext}</H1>
+
             </AddintionalWrapper>
         </Wrapper>   
     )
