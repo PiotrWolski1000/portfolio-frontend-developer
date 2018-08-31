@@ -23,12 +23,12 @@ const MainWrapper = styled.div`
 
 const Index = ({data}) => {
 // console.log(data.allDatoCmsMaincomponent)
-  // console.log(data.allDatoCmsMaincomponent.edges[0].node.mainpicture.url)
+  console.log(data.allDatoCmsMaincomponent.edges[0].node)
   return (
     <MainWrapper>
       <HeaderComponent/>
       <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>
-      <AboutComponent/>
+      <AboutComponent AboutComponentData = {data.allDatoCmsAboutcomponent.edges[0].node}/>
       <MySkillsComponent/>
       <ProjectsComponent/>
       <ContactComponent/>
@@ -52,6 +52,19 @@ query onepage {
           height
         }
         maincomponenttext
+      }
+    }
+  }
+
+  allDatoCmsAboutcomponent {
+  	edges{
+      node{
+      	myphoto{
+          url
+          width
+          height
+        }
+        description
       }
     }
   }
