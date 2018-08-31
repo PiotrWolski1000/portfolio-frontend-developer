@@ -14,19 +14,20 @@ import ProjectsComponent from '../components/ProjectsComponent'
 
 
 const MainWrapper = styled.div`
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // background-color: #265170;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* background-color: #265170; */
   background-color: #fff6e6;
 `
 
 
 const Index = ({data}) => {
-  console.log(data.allDatoCmsMaincomponent.edges[0].node.mainpicture.url)
+// console.log(data.allDatoCmsMaincomponent)
+  // console.log(data.allDatoCmsMaincomponent.edges[0].node.mainpicture.url)
   return (
     <MainWrapper>
       <HeaderComponent/>
-      <MainComponent MainComponentData = {data}/>
+      <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>
       <AboutComponent/>
       <MySkillsComponent/>
       <ProjectsComponent/>
@@ -47,7 +48,10 @@ query onepage {
       node{
         mainpicture{
           url
+          width
+          height
         }
+        maincomponenttext
       }
     }
   }
