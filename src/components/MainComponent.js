@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import Typed from 'typed.js'
+
 
 const Wrapper = styled.div`
-    /* background-image: url(./../img/bg_laptop_coffee.jpg) no-repeat center center fixed;  */
     width: 100%;
     min-height: 500px;
+    /* height: auto; */
+    min-height: 400px;
+    /* media query with height on mobiles? ofc less than 500 px and more than 500 on large screens */
     position: relative;
     top: 75px;
 `
@@ -12,7 +16,7 @@ const Wrapper = styled.div`
 const AddintionalWrapper = styled.div`
     /* width: 95%; */
     margin: 0 auto;
-    height: 100%;
+    /* height: 100%; */
     /* // border-top: #416B89 solid 2px; */
     /* // clear: both; */
 
@@ -24,6 +28,10 @@ const H1 = styled.div`
 
 const MainComponent = ({MainComponentData}) => {
     console.log(MainComponentData)
+    // const typed = new Typed('#typedText', {
+    //     strings: ["First sentence.", "Second sentence."],
+    //     typeSpeed: 30
+    // });
     return(
         <Wrapper style={{
             backgroundImage: 'url(' + MainComponentData.mainpicture.url + ')', 
@@ -33,8 +41,12 @@ const MainComponent = ({MainComponentData}) => {
         }
         }>
             <AddintionalWrapper>
+            
 
-            <H1>{MainComponentData.maincomponenttext}</H1>
+            <H1 id = "typedText">
+                {/* {typed} */}
+            </H1>
+
 
             </AddintionalWrapper>
         </Wrapper>   
