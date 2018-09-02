@@ -4,9 +4,10 @@ import TextComponent from './TextComponent/TextComponent.js';
 
 
 const Wrapper = styled.div`
-    // background-color: red;
     width: 100%;
     height: 400px;
+    position: relative;
+    top: 75px;
 `
 
 const AddintionalWrapper = styled.div`
@@ -23,7 +24,10 @@ const MySkillsComponent = ({}) => {
         <Wrapper>
             <AddintionalWrapper>
                 {/* MySkillsComponent */}
-                <TextComponent></TextComponent>
+                <TextComponent>
+
+
+                </TextComponent>
             
             </AddintionalWrapper>
         </Wrapper>   
