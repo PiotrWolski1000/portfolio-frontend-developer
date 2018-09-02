@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     border-top: #416B89 solid 2px;
 
     position: relative;
-    top: 75px;
+    top: 100px;
 `
 
 const FooterComponent = ({heroCardData}) => {
