@@ -9,39 +9,64 @@ const Wrapper = styled.div`
 `
 const AddintionalWrapper = styled.div`
     border-top: #416B89 solid 2px;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
+    width: 80%;
+    margin: 0 auto;
+
+    padding: 100px 0px;
+
+    /* margin-top: 100px; */
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 600px) {
+        width: 100%;
+        padding: 0px;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+    }
 `
-const Avatar = styled.div`
+const Avatar = styled.img`
     width: 200px;
     height: 200px;
     border-radius: 100px;
-    margin-top: 100px;
+    /* margin-top: 100px;  */
+    /* margin-top move to addintional wrapper component ?*/
+    @media (max-width: 600px) {
+        margin-top: 100px;
+    }
 `
 const Description = styled.div`
-    margin: 50px 0px;
+    margin-left: 50px;
     font-style: italic; 
     width: 80%;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
     color: grey;  
     text-indent: 50px;
+    
+    @media (max-width: 600px){
+        margin: 50px 0px;
+    }
 `
 
 const SectionTitle = styled.div`
-    /* text-align: center; */
+    text-align: center;
 `
 
 const AboutComponent = ({AboutComponentData}) => {
     return(
         <Wrapper>
+            
+            {/* <SectionTitle>About me</SectionTitle> */}
+            
             <AddintionalWrapper>
-                text
-                asd
-                asda
-                <SectionTitle>About me</SectionTitle>
-                <Avatar style={
+                {/* <Avatar style={
                     {//inline style, otherwise, how would I import data from a cms inside styled component?
                         backgroundImage: 'url(' + AboutComponentData.myphoto.url + ')', 
                         backgroundSize: 'cover', 
@@ -49,7 +74,8 @@ const AboutComponent = ({AboutComponentData}) => {
                         backgroundRepeat: 'no-repeat'
                     }
                 }
-                />
+                /> */}
+                <Avatar src={AboutComponentData.myphoto.url}/>
                 <Description>{AboutComponentData.description}</Description>
             </AddintionalWrapper>
         </Wrapper>   
