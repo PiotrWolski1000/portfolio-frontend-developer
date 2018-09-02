@@ -6,15 +6,17 @@ const Wrapper = styled.div`
     width: 100%;
     /* height: 400px; */
     height: auto;
+    position: relative;
+    top: 75px;
 `
 const AddintionalWrapper = styled.div`
-    border-top: #416B89 solid 2px;
+    /* border-top: #416B89 solid 2px; */
     flex-direction: row;
 
     width: 80%;
     margin: 0 auto;
 
-    padding: 100px 0px;
+    /* padding: 100px 0px; */
 
     /* margin-top: 100px; */
     display: flex;
@@ -37,7 +39,7 @@ const Avatar = styled.img`
     /* margin-top: 100px;  */
     /* margin-top move to addintional wrapper component ?*/
     @media (max-width: 600px) {
-        margin-top: 100px;
+        /* margin-top: 50px; */
     }
 `
 const Description = styled.div`
@@ -55,7 +57,8 @@ const Description = styled.div`
     }
 `
 
-const SectionTitle = styled.div`
+const SectionTitle = styled.h1`
+    padding-top: 50px;
     text-align: center;
 `
 
@@ -63,18 +66,9 @@ const AboutComponent = ({AboutComponentData}) => {
     return(
         <Wrapper>
             
-            {/* <SectionTitle>About me</SectionTitle> */}
+            <SectionTitle>About me</SectionTitle>
             
             <AddintionalWrapper>
-                {/* <Avatar style={
-                    {//inline style, otherwise, how would I import data from a cms inside styled component?
-                        backgroundImage: 'url(' + AboutComponentData.myphoto.url + ')', 
-                        backgroundSize: 'cover', 
-                        backgroundPosition: 'center center',
-                        backgroundRepeat: 'no-repeat'
-                    }
-                }
-                /> */}
                 <Avatar src={AboutComponentData.myphoto.url}/>
                 <Description>{AboutComponentData.description}</Description>
             </AddintionalWrapper>
