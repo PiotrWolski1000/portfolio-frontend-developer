@@ -65,7 +65,7 @@ const MySkillsComponent = ({MySkillsComponent}) => {
 
             <SectionTitle>My skills</SectionTitle>
             <AddintionalWrapper>
-                <img src = {MySkillsComponent.javascript.url}></img>
+                <img src = {MySkillsComponent.javascriptimage.url}></img>
                 <img src = {MySkillsComponent.html5.url}></img>
                 <img src = {MySkillsComponent.css3.url}></img>
                 <img src = {MySkillsComponent.nodejs.url}></img>

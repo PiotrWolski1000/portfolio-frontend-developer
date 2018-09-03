@@ -23,14 +23,15 @@ const MainWrapper = styled.div`
 
 const Index = ({data}) => {
 // console.log(data.allDatoCmsMaincomponent)
-  console.log(data.allDatoCmsMaincomponent.edges[0].node)
+  // console.log(data.allDatoCmsMaincomponent.edges[0].node)
+  // console.log(data.allDatoCmsMyskillscomponent)
   return (
     <MainWrapper>
       <HeaderComponent/>
       <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>
       <AboutComponent AboutComponentData = {data.allDatoCmsAboutcomponent.edges[0].node}/>
-      <MySkillsComponent/>
-      <ProjectsComponent/>
+      <MySkillsComponent MySkillsComponent = {data.allDatoCmsMyskillscomponent.edges[0].node}/>
+      {/* <ProjectsComponent/> */}
       <ContactComponent/>
       <FooterComponent/>
 
@@ -65,6 +66,44 @@ query onepage {
           height
         }
         description
+      }
+    }
+  }
+
+  allDatoCmsMyskillscomponent{
+    edges{
+      node{
+        javascriptimage {
+          url
+        }
+        html5 {
+          url
+        }
+        css3 {
+          url
+        }
+        nodejs {
+          url
+        }
+        react {
+          url
+        }
+        npm {
+          url
+        }
+        photoshop {
+          url
+        }
+        ubuntuos {
+          url
+        }
+        windowsos {
+          url
+        }
+        github {
+          url
+        }
+      
       }
     }
   }
