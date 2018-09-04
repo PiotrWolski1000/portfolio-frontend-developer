@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Snap from 'snapsvg-cjs';
 
-if (window !== 'undefined'){
+if (typeof window !== 'undefined'){
     window.onload = function() {
         let canvas = Snap.select("#svg-animation"),
         allItems = canvas.select("#all-items"),
