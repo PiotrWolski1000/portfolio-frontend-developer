@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import SendButtonComponent from './SendButtonComponent.js'
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 600px;
+    height: 800px;
 
     position: relative;/*because of fixed header*/
     top: 75px;
@@ -39,9 +39,6 @@ const ContactForm = styled.div`
 
         border-radius: 10px;
     }
-    #message {
-        
-    }
 `
 const ContactComponent = ({}) => {
     return(
@@ -54,12 +51,14 @@ const ContactComponent = ({}) => {
                     <input name="email" type="email" placeholder="Email address"/>
                     <input name="phone" type="number" placeholder="Phone number"/>
                     <input name="mail_subject" type="text" placeholder="Subject/Title"/>
-                    {/* <input /> */}
-                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"> 
-                    {/* asd */}
-                    </textarea>
+                    
+                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+
 
                 </ContactForm>
+
+                    <SendButtonComponent></SendButtonComponent>
+
 
             </AddintionalWrapper>
         </Wrapper>   
