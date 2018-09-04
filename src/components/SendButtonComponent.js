@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Snap from 'snapsvg-cjs';
+
+if (typeof window !== `undefined`) {
+    import Snap from 'snapsvg-cjs';
+}
 
 const Wrapper = styled.div`
     .st0{fill:#63BEDD;} 
