@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 if (typeof window !== `undefined`) {
-    import Snap from 'snapsvg-cjs';
+    const Snap =  require('snapsvg-cjs');
 }
 
 const Wrapper = styled.div`
