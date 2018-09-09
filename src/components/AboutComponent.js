@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
     width: 100%;
-    /* height: 400px; */
     height: auto;
     position: relative;
     top: 75px;
@@ -16,9 +15,6 @@ const AddintionalWrapper = styled.div`
     width: 80%;
     margin: 0 auto;
 
-    /* padding: 100px 0px; */
-
-    /* margin-top: 100px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,17 +32,11 @@ const Avatar = styled.img`
     width: 200px;
     height: 200px;
     border-radius: 100px;
-    /* margin-top: 100px;  */
-    /* margin-top move to addintional wrapper component ?*/
-    @media (max-width: 600px) {
-        /* margin-top: 50px; */
-    }
 `
 const Description = styled.div`
     margin-left: 50px;
     font-style: italic; 
     width: 80%;
-    /* height: 200px; */
     display: flex;
     align-items: center;
     color: grey;  
