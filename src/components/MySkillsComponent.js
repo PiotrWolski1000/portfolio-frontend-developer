@@ -5,17 +5,14 @@ import TextComponent from './TextComponent/TextComponent.js';
 
 const Wrapper = styled.div`
     width: 100%;
-    /* height: 00px; */
     height: auto;
     position: relative;
     top: 75px;
 
     .flip3D{ 
-	width:100px; 
-	height:100px; 
-	margin: 50px auto;	
-	/* margin-left: 50px; */
-	/* margin-right: 50px; */
+        width:150px; 
+        height:150px; 
+        margin: 25px auto;	
     }
     .flip3D > .front{
         -webkit-transform:rotateY(0deg);
@@ -24,14 +21,12 @@ const Wrapper = styled.div`
         border-radius: 7px;
         backface-visibility: hidden;
         transition: transform .5s linear 0s;
-        /* background-color: green; */
     }
     .flip3D > .back{
-        /* background-color: red; */
         position:absolute;
         transform: perspective( 600px ) rotateY( 180deg );
-        width:100px; 
-        height:100px;
+        width:150px; 
+        height:150px;
         border-radius: 7px;
         backface-visibility: hidden;
         transition: transform .5s linear 0s;
@@ -41,7 +36,7 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
 
-        font-size: 0.8rem;
+        color: grey;
     }
 
     .flip3D:hover > .front{
@@ -54,18 +49,15 @@ const Wrapper = styled.div`
 `
 
 const AddintionalWrapper = styled.div`
-    /* margin: 0 auto; */
-
     img {
         margin: 0 auto;
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         padding: 20px;
     }
 
 
     display: grid;
-    /* grid-gap: 10px; */
     align-items: center;
     justify-content: center;
 
@@ -79,9 +71,8 @@ const AddintionalWrapper = styled.div`
         grid-template-columns: repeat(3, 1fr);
     }
     @media(max-width: 600px) {
-        /* align-items: center; */
-        grid-template-rows: repeat(10, 1fr);
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     @media(max-width: 400px) {
         grid-template-rows: repeat(10, 1fr);
@@ -97,15 +88,6 @@ const SectionTitle = styled.h1`
     width : 95%;
     margin: 0 auto;
     border-top: #416B89 solid 2px;
-`
-
-const MySkillsList = styled.div`
-    /* display: flex; */
-    /* flex-direction: column; */
-
-    /* align-items: center; */
-    /* justify-content: center; */
-
 `
 
 const MySkillsComponent = ({MySkillsComponent}) => {
@@ -127,100 +109,100 @@ const MySkillsComponent = ({MySkillsComponent}) => {
             <SectionTitle>My skills</SectionTitle>
             <AddintionalWrapper>
             
-            {/* <MySkillsList> */}
-                {/* {listImages.map((card)=>{return(<img src = {card}></img>)})} */}
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.html5.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> HTML5 </p>
-                    </div>
-                </div>    
+            {/* <TextComponent>test</TextComponent> */}
+            
+            {/* {listImages.map((card)=>{return(<img src = {card}></img>)})} */}
+            
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.html5.url}></img>
+                </div>
+                <div className='back'>
+                    <p> HTML5 </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.javascriptimage.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> JavaScript </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.javascriptimage.url}></img>
+                </div>
+                <div className='back'>
+                    <p> JavaScript </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.css3.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> CSS3 </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.css3.url}></img>
+                </div>
+                <div className='back'>
+                    <p> CSS3 </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.nodejs.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> NodeJS </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.nodejs.url}></img>
+                </div>
+                <div className='back'>
+                    <p> NodeJS </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.react.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> React </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.react.url}></img>
+                </div>
+                <div className='back'>
+                    <p> React </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.npm.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> NPM </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.npm.url}></img>
+                </div>
+                <div className='back'>
+                    <p> NPM </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.photoshop.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> Photoshop </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.photoshop.url}></img>
+                </div>
+                <div className='back'>
+                    <p> Photoshop </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.ubuntuos.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> Linux Ubuntu </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.ubuntuos.url}></img>
+                </div>
+                <div className='back'>
+                    <p> Linux Ubuntu </p>
+                </div>
+            </div>    
 
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.windowsos.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> Windows 10 </p>
-                    </div>
-                </div>    
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.windowsos.url}></img>
+                </div>
+                <div className='back'>
+                    <p> Windows 10 </p>
+                </div>
+            </div>    
 
-                <div className='flip3D'>
-                    <div className='front'>
-                        <img src = {MySkillsComponent.github.url}></img>
-                    </div>
-                    <div className='back'>
-                        <p> Github </p>
-                    </div>
-                </div>    
-            {/* </MySkillsList> */}
-
+            <div className='flip3D'>
+                <div className='front'>
+                    <img src = {MySkillsComponent.github.url}></img>
+                </div>
+                <div className='back'>
+                    <p> Github </p>
+                </div>
+            </div>    
 
 
 
