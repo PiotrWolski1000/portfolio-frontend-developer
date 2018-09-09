@@ -1,56 +1,80 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Typed from 'typed.js'
+import Typed from 'typed.js'
 
 
 const Wrapper = styled.div`
     width: 100%;
     min-height: 500px;
-    /* height: auto; */
     min-height: 400px;
-    /* media query with height on mobiles? ofc less than 500 px and more than 500 on large screens */
     position: relative;
     top: 75px;
+
+    .text {
+        display: flex;
+        justify-content: flex-start;
+        width: 50%;
+        height: 100%;
+        margin-left: 20px;
+        position: relative;
+        top: 200px;
+        color: white;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+
+        font-family: Helvetica, sans-serif;
+        word-spacing: 100%;
+        font-weight: bold;
+        @media (min-width: 720px) {
+            font-size: 2rem;
+            line-height: 2rem;            
+
+        }
+        @media (min-width: 1080px) {
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+        
+    }
 `
 
 const AddintionalWrapper = styled.div`
-    /* width: 95%; */
     margin: 0 auto;
-    /* height: 100%; */
-    /* // border-top: #416B89 solid 2px; */
-    /* // clear: both; */
-
 `
 
-const H1 = styled.div`
-    color: white;
-`
+class MainComponent extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
-const MainComponent = ({MainComponentData}) => {
-    console.log(MainComponentData)
-    // const typed = new Typed('#typedText', {
-    //     strings: ["First sentence.", "Second sentence."],
-    //     typeSpeed: 30
-    // });
-    return(
-        <Wrapper style={{
-            backgroundImage: 'url(' + MainComponentData.mainpicture.url + ')', 
-            backgroundSize: 'cover', 
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat'
-        }
-        }>
-            <AddintionalWrapper>
-            
+    componentDidMount = () => {
+        const typedEl = new Typed(".text", {
+            strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website :)"],
+            typeSpeed: 100,
+            backSpeed: 30,
+            loop: true,
+        })
+    }
 
-            <H1 id = "typedText">
-                {/* {typed} */}
-            </H1>
+    render()
+    {
+        return(
+            <Wrapper style={
+                {
+                    backgroundImage: 'url(' + this.props.MainComponentData.mainpicture.url + ')', 
+                    backgroundSize: 'cover', 
+                    backgroundPosition: 'center center',
+                    backgroundRepeat: 'no-repeat'
+            }}>
+                <AddintionalWrapper>
+                
+                    <div className = "text"></div>
 
-
-            </AddintionalWrapper>
-        </Wrapper>   
-    )
+                </AddintionalWrapper>
+            </Wrapper>   
+        )
+    }
   }
   export default MainComponent;
 
+  true
