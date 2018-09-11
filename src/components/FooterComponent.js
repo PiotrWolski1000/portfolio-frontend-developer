@@ -21,11 +21,19 @@ const MainWrapper = styled.div`
 `
 
 const BottomFooter = styled.div`
-    padding-top: 50px;
+    margin-top:150px;
     color: white;
+    
     @media(max-width: 600px){
+        font-size:1.1rem;
+    }
+    @media(min-width: 600px){
         font-size: 1.3rem;
         
+    }
+    @media(min-width: 720px){
+        font-size: 1.5rem;
+        line-height: 1.5rem
     }
 `
 const Wrapper = styled.div`
@@ -46,9 +54,13 @@ const Wrapper = styled.div`
         grid-template-rows: repeat(2, 1fr);    
     }
     .footerItem {
+        /* padding-left: 50px; */
         padding-left: 50px;
         border-left: 2px solid #416B89;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
             @media (max-width: 600px){
                 font-size: 1.2rem;
@@ -103,12 +115,12 @@ const FooterComponent = ({FooterComponent}) => {
                         </span>
                     </div>
 
-                    {/* <div className="footerItem">
+                    <div className="footerItem">
                         <img src={FooterComponent.githubimage.url} ></img>
                         <span>
                             <a href={FooterComponent.githublink}>Github profile</a>
                         </span>
-                    </div> */}
+                    </div>
 
                     <div className="footerItem">
                         <img src={FooterComponent.atimage.url} ></img>
