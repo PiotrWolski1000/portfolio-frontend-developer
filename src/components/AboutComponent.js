@@ -9,7 +9,6 @@ const Wrapper = styled.div`
     top: 75px;
 `
 const AddintionalWrapper = styled.div`
-    /* border-top: #416B89 solid 2px; */
     flex-direction: row;
 
     width: 80%;
