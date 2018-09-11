@@ -8,6 +8,8 @@ const Wrapper = styled.div`
 
     position: relative;/*because of fixed header*/
     top: 75px;
+
+
 `
 
 const AddintionalWrapper = styled.div`
@@ -40,10 +42,19 @@ const ContactForm = styled.div`
         border-radius: 10px;
     }
 `
+
+
+const HintDiv = styled.div`
+    position: relative;
+    top: -50px;
+    text-align: center;
+    font-style: italic;
+    color: grey;
+`
 const ContactComponent = ({}) => {
     return(
         <Wrapper>
-            <SectionTitle>Contact me</SectionTitle>
+            <SectionTitle>Contact</SectionTitle>
             <AddintionalWrapper>
 
                 <ContactForm>
@@ -57,8 +68,11 @@ const ContactComponent = ({}) => {
 
                 </ContactForm>
 
-                    <SendButtonComponent></SendButtonComponent>
-
+                    <SendButtonComponent>
+                    </SendButtonComponent>
+                    <HintDiv>
+                        Click the circle to send me a message!
+                    </HintDiv>
 
             </AddintionalWrapper>
         </Wrapper>   
