@@ -14,9 +14,8 @@ import ProjectsComponent from '../components/ProjectsComponent'
 
 
 const MainWrapper = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* background-color: #265170; */
+  
+
   background-color: #fff6e6;
 `
 
@@ -25,15 +24,16 @@ const Index = ({data}) => {
 // console.log(data.allDatoCmsMaincomponent)
   // console.log(data.allDatoCmsMaincomponent.edges[0].node)
   // console.log(data.allDatoCmsMyskillscomponent)
+  // console.log(data.allDatoCmsFootercomponent.edges[0].node)
   return (
     <MainWrapper>
       <HeaderComponent/>
       <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>
       <AboutComponent AboutComponentData = {data.allDatoCmsAboutcomponent.edges[0].node}/>
       <MySkillsComponent MySkillsComponent = {data.allDatoCmsMyskillscomponent.edges[0].node}/>
-      {/* <ProjectsComponent/> */}
+      <ProjectsComponent/>
       <ContactComponent/>
-      <FooterComponent/>
+      <FooterComponent FooterComponent = {data.allDatoCmsFootercomponent.edges[0].node}/>
 
     </MainWrapper>
   )
@@ -107,4 +107,35 @@ query onepage {
       }
     }
   }
+  allDatoCmsFootercomponent{
+    edges{
+      node{
+        phoneimage{
+          url
+        }
+        facebookimage{
+          url
+        }
+        linkedinimage{
+          url
+        }
+        instagramimage{
+          url
+        }
+        githubimage{
+          url
+        }
+        atimage{
+          url
+        }
+        email
+        githublink
+        instagramtext
+        facebooktext
+        phonenumber
+        linkedintext
+      }
+    }
+  }
+
 }`
