@@ -3,9 +3,11 @@ import styled from 'styled-components'
 
 
 const Wrapper = styled.div`
-    // background-color: red;
     width: 100%;
-    height: 400px;
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    top: 75px;
 `
 
 
@@ -16,12 +18,19 @@ const AddintionalWrapper = styled.div`
     border-top: #416B89 solid 2px;
     clear: both;
 `
+const SectionTitle = styled.h1`
+    padding-top: 50px;
+    text-align: center;
+`
+
 
 const ProjectsComponent = ({}) => {
     return(
         <Wrapper>
             <AddintionalWrapper>
-                ProjectsComponent
+                <SectionTitle>
+                    My projects
+                </SectionTitle>               
             </AddintionalWrapper>
         </Wrapper>   
     )
