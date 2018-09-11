@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import Carousel from './Carousel';
 
 const Wrapper = styled.div`
     width: 100%;
-    min-height: 500px;
+    /* min-height: 500px; */
     height: auto;
     position: relative;
+    margin-bottom: 50px;
     top: 75px;
 `
 
@@ -30,7 +31,12 @@ const ProjectsComponent = ({}) => {
             <AddintionalWrapper>
                 <SectionTitle>
                     My projects
-                </SectionTitle>               
+                </SectionTitle>
+
+                <Carousel>
+
+                </Carousel>
+
             </AddintionalWrapper>
         </Wrapper>   
     )

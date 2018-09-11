@@ -128,6 +128,10 @@ query onepage {
         atimage{
           url
         }
+        twitterimage{
+          url
+        }
+        twitterlink
         email
         githublink
         instagramtext
