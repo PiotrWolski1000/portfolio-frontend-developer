@@ -36,6 +36,10 @@ const Wrapper = styled.div`
         }
         
     }
+
+    .typed-cursor {
+        display: none;
+    }
 `
 
 const AddintionalWrapper = styled.div`
@@ -48,6 +52,7 @@ class MainComponent extends React.Component {
     }
 
     componentDidMount = () => {
+        // www.mattboldt.com
         const typedEl = new Typed(".text", {
             strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website :)"],
             typeSpeed: 100,
