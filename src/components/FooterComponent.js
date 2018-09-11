@@ -23,7 +23,7 @@ const MainWrapper = styled.div`
 const BottomFooter = styled.div`
     margin-top:150px;
     color: white;
-    
+
     @media(max-width: 600px){
         font-size:1.1rem;
     }
@@ -146,6 +146,13 @@ const FooterComponent = ({FooterComponent}) => {
                         <img src={FooterComponent.instagramimage.url} ></img>
                         <span>
                             <a href={FooterComponent.instagramtext}>Instagram profile</a>
+                        </span>
+                    </div>
+
+                    <div className="footerItem">
+                        <img src={FooterComponent.twitterimage.url} ></img>
+                        <span>
+                            <a href={FooterComponent.twitterlink}>Twitter profile</a>
                         </span>
                     </div>
 
