@@ -106,7 +106,7 @@ const MySkillsComponent = ({MySkillsComponent}) => {
     return(
         <Wrapper>
 
-            <SectionTitle>My skills</SectionTitle>
+            <SectionTitle>I work with</SectionTitle>
             <AddintionalWrapper>
             
             {/* <TextComponent>test</TextComponent> */}
