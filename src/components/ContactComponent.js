@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SendButtonComponent from './SendButtonComponent.js'
+import { encode } from 'punycode';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -51,31 +52,60 @@ const HintDiv = styled.div`
     font-style: italic;
     color: grey;
 `
-const ContactComponent = ({}) => {
-    return(
-        <Wrapper>
-            <SectionTitle>Contact</SectionTitle>
-            <AddintionalWrapper>
+export default class ContactComponent extends React.Component  {
 
+    constructor(props){
+        super(props)
+        this.state = {}
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const form = e.target;
+        fetch("/" , {
+            method: "POST",
+            headers: { "Content-Type" : "application/x-www-form-urlencoded" },
+            body: encode({
+                "form-name": form.getAttribute('name'),
+                ...this.state
+            })
+        })
+        .catch(error => alert(error))
+    }
+    render(){
+
+        return(
+            <Wrapper>
+                <SectionTitle>Contact</SectionTitle>
+                <AddintionalWrapper>
+                
                 <ContactForm>
-                    <form name="contact" method="POST"netlify>
-                        <input name="name" type='text' placeholder="Name, Company name"/>
-                        <input name="email" type="email" placeholder="Email address"/>
-                        <input name="phone" type="number" placeholder="Phone number"/>
-                        <input name="mail_subject" type="text" placeholder="Subject/Title"/>
-                        <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
-                        <SendButtonComponent type={'submit'}>
-                        </SendButtonComponent>
-                    </form>
-
+                    <form 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify={true}
+                    data-netlify-honeypot="bot-field"
+                    onSubmit = {this.handleSubmit}
+                    >
+                    <input type="hidden" name="form-name" value="contact"></input>
+                    <input name="name" type='text' placeholder="Name, Company name"/>
+                    <input name="email" type="email" placeholder="Email address"/>
+                    <input name="phone" type="number" placeholder="Phone number"/>
+                    <input name="mail_subject" type="text" placeholder="Subject/Title"/>
+                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+                    <SendButtonComponent type={'submit'}>
+                    </SendButtonComponent>
+                </form>
+                
                 </ContactForm>
-
-                    <HintDiv>
-                        Click the circle to send me a message!
-                    </HintDiv>
-
-            </AddintionalWrapper>
-        </Wrapper>   
-    )
-  }
-  export default ContactComponent;
+                
+                <HintDiv>
+                Click the circle to send me a message!
+                </HintDiv>
+            
+                </AddintionalWrapper>
+            </Wrapper>   
+        )        
+    }
+} 
+    //   export default ContactComponent;
