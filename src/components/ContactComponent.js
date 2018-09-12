@@ -58,7 +58,7 @@ const ContactComponent = ({}) => {
             <AddintionalWrapper>
 
                 <ContactForm>
-                    <form name="contact" netlify>
+                    <form name="contact" method="POST"netlify>
                         <input name="name" type='text' placeholder="Name, Company name"/>
                         <input name="email" type="email" placeholder="Email address"/>
                         <input name="phone" type="number" placeholder="Phone number"/>
