@@ -64,10 +64,10 @@ const ContactComponent = ({}) => {
                         <input name="phone" type="number" placeholder="Phone number"/>
                         <input name="mail_subject" type="text" placeholder="Subject/Title"/>
                         <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+                        <SendButtonComponent type={'submit'}>
+                        </SendButtonComponent>
                     </form>
 
-                    <SendButtonComponent type={'submit'}>
-                    </SendButtonComponent>
                 </ContactForm>
 
                     <HintDiv>
