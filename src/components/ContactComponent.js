@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SendButtonComponent from './SendButtonComponent.js'
 import { encode } from 'punycode';
-
+import {navigateTo} from 'gatsby-link';
 const Wrapper = styled.div`
     width: 100%;
     height: 800px;
@@ -59,6 +59,10 @@ export default class ContactComponent extends React.Component  {
         this.state = {}
     }
 
+    handleChange = e => {
+        this.setState({[e.target.name] : e.target.value});
+    }
+
     handleSubmit = e => {
         e.preventDefault()
         const form = e.target;
@@ -70,8 +74,10 @@ export default class ContactComponent extends React.Component  {
                 ...this.state
             })
         })
+        .then(()=>navigateTo(form.getAttribute("action")))
         .catch(error => alert(error))
     }
+
     render(){
 
         return(
@@ -80,19 +86,22 @@ export default class ContactComponent extends React.Component  {
                 <AddintionalWrapper>
                 
                 <ContactForm>
-                    <form 
+                <form 
                     name="contact" 
                     method="POST" 
                     data-netlify={true}
+                    action="/about/"
                     data-netlify-honeypot="bot-field"
                     onSubmit = {this.handleSubmit}
-                    >
-                    <input type="hidden" name="form-name" value="contact"></input>
-                    <input name="name" type='text' placeholder="Name, Company name"/>
-                    <input name="email" type="email" placeholder="Email address"/>
-                    <input name="phone" type="number" placeholder="Phone number"/>
-                    <input name="mail_subject" type="text" placeholder="Subject/Title"/>
-                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+                >
+
+                    <input type="hidden" name="form-name" value="contact"/>
+                    <input name="name" type='text' placeholder="Name, Company name" onChange={this.handleChange}/>
+
+                    <input name="email" type="email" placeholder="Email address"  onChange={this.handleChange} />
+                    <input name="phone" type="number" placeholder="Phone number" onChange={this.handleChange} />
+                    <input name="mail_subject" type="text" placeholder="Subject/Title"  onChange={this.handleChange} />
+                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"  onChange={this.handleChange} />
                     <SendButtonComponent type={'submit'}>
                     </SendButtonComponent>
                 </form>
@@ -107,5 +116,4 @@ export default class ContactComponent extends React.Component  {
             </Wrapper>   
         )        
     }
-} 
-    //   export default ContactComponent;
+}
