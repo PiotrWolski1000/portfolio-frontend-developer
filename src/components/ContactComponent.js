@@ -65,7 +65,7 @@ export default class ContactComponent extends React.Component  {
 
     handleSubmit = e => {
         e.preventDefault()
-        const form = e.target;
+        let form = e.target;
         fetch("/" , {
             method: "POST",
             headers: { "Content-Type" : "application/x-www-form-urlencoded" },
