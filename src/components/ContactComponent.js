@@ -34,7 +34,7 @@ const ContactForm = styled.div`
     align-items: center;
     input, textarea {
         display: block;
-        width: 80%;
+        width: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 10px 0px;
@@ -58,18 +58,18 @@ const ContactComponent = ({}) => {
             <AddintionalWrapper>
 
                 <ContactForm>
-                    <input name="name" type='text' placeholder="Name, Company name"/>
-                    <input name="email" type="email" placeholder="Email address"/>
-                    <input name="phone" type="number" placeholder="Phone number"/>
-                    <input name="mail_subject" type="text" placeholder="Subject/Title"/>
-                    
-                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+                    <form name="contact" netlify>
+                        <input name="name" type='text' placeholder="Name, Company name"/>
+                        <input name="email" type="email" placeholder="Email address"/>
+                        <input name="phone" type="number" placeholder="Phone number"/>
+                        <input name="mail_subject" type="text" placeholder="Subject/Title"/>
+                        <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"></textarea>
+                    </form>
 
-
+                    <SendButtonComponent type={'submit'}>
+                    </SendButtonComponent>
                 </ContactForm>
 
-                    <SendButtonComponent>
-                    </SendButtonComponent>
                     <HintDiv>
                         Click the circle to send me a message!
                     </HintDiv>
