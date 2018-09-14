@@ -9,23 +9,13 @@ import FooterComponent from '../components/FooterComponent';
 import ContactComponent from '../components/ContactComponent';
 import ProjectsComponent from '../components/ProjectsComponent'
 
-
-
-
-
 const MainWrapper = styled.div`
-  
-
   background-color: #fff6e6;
 `
 
 
 const Index = ({data}) => {
-// console.log(data.allDatoCmsMaincomponent)
-  // console.log(data.allDatoCmsMaincomponent.edges[0].node)
-  // console.log(data.allDatoCmsMyskillscomponent)
-  // console.log(data.allDatoCmsFootercomponent.edges[0].node)
-  return (
+return (
     <MainWrapper>
       <HeaderComponent/>
       <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>

@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import SendButtonComponent from './SendButtonComponent.js'
-import { encode } from 'punycode';
-import {navigateTo} from 'gatsby-link';
+
 const Wrapper = styled.div`
     width: 100%;
     height: 800px;
-
-    position: relative;/*because of fixed header*/
+    position: relative;
     top: 75px;
-
-
 `
 
 const AddintionalWrapper = styled.div`
@@ -59,25 +55,6 @@ export default class ContactComponent extends React.Component  {
         this.state = {}
     }
 
-    handleChange = e => {
-        this.setState({[e.target.name] : e.target.value});
-    }
-
-    handleSubmit = e => {
-        e.preventDefault()
-        let form = e.target;
-        fetch("/" , {
-            method: "POST",
-            headers: { "Content-Type" : "application/x-www-form-urlencoded" },
-            body: encode({
-                "form-name": form.getAttribute('name'),
-                ...this.state
-            })
-        })
-        .then(()=>navigateTo(form.getAttribute("action")))
-        .catch(error => alert(error))
-    }
-
     render(){
 
         return(
@@ -86,27 +63,19 @@ export default class ContactComponent extends React.Component  {
                 <AddintionalWrapper>
                 
                 <ContactForm>
-                <form 
-                    name="contact" 
-                    method="POST" 
-                    data-netlify={true}
-                    action="/about/"
-                    data-netlify-honeypot="bot-field"
-                    onSubmit = {this.handleSubmit}
-                >
+                    <form>
 
-                    <input type="hidden" name="form-name" value="contact"/>
-                    <input name="name" type='text' placeholder="Name, Company name" onChange={this.handleChange}/>
+                        <input type="hidden" name="form-name" value="contact"/>
+                        <input name="name" type='text' placeholder="Name, Company name"/>
 
-                    <input name="email" type="email" placeholder="Email address"  onChange={this.handleChange} />
-                    <input name="phone" type="number" placeholder="Phone number" onChange={this.handleChange} />
-                    <input name="mail_subject" type="text" placeholder="Subject/Title"  onChange={this.handleChange} />
-                    <textarea name="message" type="text" rows="4" cols="50" placeholder="Message"  onChange={this.handleChange} />
-                    <SendButtonComponent type={'submit'}>
-                    </SendButtonComponent>
-                </form>
-                
+                        <input name="email" type="email" placeholder="Email address" />
+                        <input name="phone" type="number" placeholder="Phone number"/>
+                        <input name="mail_subject" type="text" placeholder="Subject/Title"/>
+                        <textarea name="message" type="text" rows="4" cols="50" placeholder="Message" />
+                    </form>
                 </ContactForm>
+                <SendButtonComponent>
+                </SendButtonComponent>
                 
                 <HintDiv>
                 Click the circle to send me a message!

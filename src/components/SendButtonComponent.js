@@ -5,7 +5,7 @@ if (typeof window !== `undefined`) {
     const Snap =  require('snapsvg-cjs');
 }
 
-const Wrapper = styled.button`
+const Wrapper = styled.div`
 
     .st0{fill:#63BEDD;} 
     .st1{fill:#A0AFB5;} 
