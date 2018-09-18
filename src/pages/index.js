@@ -28,18 +28,18 @@ export default class Index extends React.Component {
         <section id="main">
           <MainComponent MainComponentData = {this.props.data.allDatoCmsMaincomponent.edges[0].node}/>
         </section>
-        <section id="about">
+        <section id="about" ref = "about">
           <AboutComponent AboutComponentData = {this.props.data.allDatoCmsAboutcomponent.edges[0].node}/>
         </section>
         <section id = "skills"> 
           <MySkillsComponent MySkillsComponent = {this.props.data.allDatoCmsMyskillscomponent.edges[0].node}/>
         </section>
         <section id = "projects">
-          <ProjectsComponent/>
+          <ProjectsComponent ProjectsComponent = {this.props.data. allDatoCmsProjectcontentcomponent.edges}/>
         </section>
       
         <section id="contact">
-          <ContactComponent />
+          <ContactComponent/>
         </section>
         
         
@@ -149,6 +149,19 @@ query onepage {
         facebooktext
         phonenumber
         linkedintext
+      }
+    }
+  }
+
+  allDatoCmsProjectcontentcomponent{
+    edges{
+  		node{
+        id
+        projecttitle
+        projectdescription
+        projectimage{
+          url
+        }
       }
     }
   }
