@@ -18,6 +18,7 @@ const Item = styled.div`
     height: 250px;
     background: black;
     opacity: 0.5;
+    text-transform: lowercase;
 
 } 
 
@@ -31,7 +32,6 @@ const Item = styled.div`
       align-items: space-around;
       font-family: Arial, Helvetica, sans-serif;
       color: white;
-      text-transform: uppercase;
     }
   }
 `
@@ -64,33 +64,43 @@ const Description = styled.div`
     font-size: 0.8rem;
     line-height: 1.3rem;
   }
+  text-transform: none;
 `
 
 export default class extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+
   render() {
-    const iterator = 5;
-    const data = ['slide1','slide2','slide3','slide4','slide5']
+    // console.log(this.props.data)
+    // console.log(this.props.data[0].node.id)
+    // const iterator = 5;
+    // const data = ['slide1','slide2','slide3','slide4','slide5']
     return (
         <Carousel>
             
               {
-                data.map((point)=>{return(
-                  <Item key={point}>
+                this.props.data.map((point)=>{return(
+                  <Item 
+                  key={point.node.id} 
+                  // src={point.node.projectimage.url}
+                  style={
+                      {
+                          backgroundImage: 'url(' + point.node.projectimage.url + ')', 
+                          backgroundSize: 'cover', 
+                          backgroundPosition: 'center center',
+                          backgroundRepeat: 'no-repeat'
+                  }}>
+                  >
+
                     <DescriptionContainer>
                       <ItemTitle>
-                        {point}
+                        {point.node.projecttitle}
                       </ItemTitle>
                       <Description>
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. 
-                        Cras consequat, dolor sit amet
-                        luctus convallis, libero eros
-                        porttitor arcu, nec ultricies 
-                        est odio eget massa. Fusce aliquet
-                        gravida sem, sit amet tincidunt 
-                        arcu aliquam vitae. Integer
-                        erat urna, pretium dignissim 
-                        
+                        {point.node.projectdescription}                     
                       </Description>
                     </DescriptionContainer>
                   </Item>
