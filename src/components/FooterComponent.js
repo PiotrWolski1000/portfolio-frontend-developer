@@ -100,7 +100,6 @@ const MiniTitle = styled.h2`
 
 
 const FooterComponent = ({FooterComponent}) => {
-    console.log(FooterComponent.phoneimage.url)
     return(
         <MainWrapper>
             <MiniTitle>
