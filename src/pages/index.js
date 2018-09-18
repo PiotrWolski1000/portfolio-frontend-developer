@@ -14,22 +14,43 @@ const MainWrapper = styled.div`
 `
 
 
-const Index = ({data}) => {
-return (
-    <MainWrapper>
-      <HeaderComponent/>
-      <MainComponent MainComponentData = {data.allDatoCmsMaincomponent.edges[0].node}/>
-      <AboutComponent AboutComponentData = {data.allDatoCmsAboutcomponent.edges[0].node}/>
-      <MySkillsComponent MySkillsComponent = {data.allDatoCmsMyskillscomponent.edges[0].node}/>
-      <ProjectsComponent/>
-      <ContactComponent/>
-      <FooterComponent FooterComponent = {data.allDatoCmsFootercomponent.edges[0].node}/>
+// const Index = ({data}) => {
+export default class Index extends React.Component {
+  
+  constructor(props) {
+    super(props)
+  }
+  render(){
 
-    </MainWrapper>
-  )
+    return (
+      <MainWrapper>
+        <HeaderComponent/>
+        <section id="main">
+          <MainComponent MainComponentData = {this.props.data.allDatoCmsMaincomponent.edges[0].node}/>
+        </section>
+        <section id="about">
+          <AboutComponent AboutComponentData = {this.props.data.allDatoCmsAboutcomponent.edges[0].node}/>
+        </section>
+        <section id = "skills"> 
+          <MySkillsComponent MySkillsComponent = {this.props.data.allDatoCmsMyskillscomponent.edges[0].node}/>
+        </section>
+        <section id = "projects">
+          <ProjectsComponent/>
+        </section>
+      
+        <section id="contact">
+          <ContactComponent />
+        </section>
+        
+        
+        <FooterComponent FooterComponent = {this.props.data.allDatoCmsFootercomponent.edges[0].node}/>
+
+      </MainWrapper>
+    )
+  }
 }
 
-export default Index;
+// export default Index;
 
 
 export const query = graphql`

@@ -75,7 +75,7 @@ export default class extends React.Component {
             
               {
                 data.map((point)=>{return(
-                  <Item>
+                  <Item key={point}>
                     <DescriptionContainer>
                       <ItemTitle>
                         {point}
