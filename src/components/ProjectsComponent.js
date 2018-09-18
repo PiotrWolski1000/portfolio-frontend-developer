@@ -25,7 +25,8 @@ const SectionTitle = styled.h1`
 `
 
 
-const ProjectsComponent = ({}) => {
+const ProjectsComponent = ({ProjectsComponent}) => {
+    console.log(ProjectsComponent)
     return(
         <Wrapper>
             <AddintionalWrapper>
@@ -33,7 +34,7 @@ const ProjectsComponent = ({}) => {
                     My projects
                 </SectionTitle>
 
-                <Carousel>
+                <Carousel data={ProjectsComponent}>
 
                 </Carousel>
 
