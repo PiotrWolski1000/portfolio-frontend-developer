@@ -60,8 +60,6 @@ query onepage {
       node{
         mainpicture{
           url
-          width
-          height
         }
         maincomponenttext
       }
@@ -162,6 +160,8 @@ query onepage {
         projectimage{
           url
         }
+        githublink
+        livelink
       }
     }
   }

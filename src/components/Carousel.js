@@ -1,7 +1,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 import styled from 'styled-components'  
-import $ from 'jquery';
 
 const DescriptionContainer = styled.div`
   
@@ -15,9 +14,9 @@ const Item = styled.div`
   ${DescriptionContainer} {
     display: none;
     width: 100%;
-    height: 250px;
+    height: 250px;  
     background: black;
-    opacity: 0.5;
+    opacity: 0.7;
     text-transform: lowercase;
 
 } 
@@ -29,7 +28,7 @@ const Item = styled.div`
     ${DescriptionContainer}{
       display: flex;
       flex-direction: column;
-      align-items: space-around;
+      align-items: space-between;
       font-family: Arial, Helvetica, sans-serif;
       color: white;
     }
@@ -44,22 +43,20 @@ const ItemTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 20px;
-  
+  padding-left: 20px;
+  text-transform: capitalize;
 `
 
 const Description = styled.div`
   width: 100%;
-  /* min-height: 200px; */
-  /* height: auto; */
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.0rem;
   line-height: 1.5rem;
   text-indent: 20px;
   word-wrap: wrap;
-  /* margin-left: 20px; */
-  /* padding: 0px 20px 0px 20px; */
   padding-left: 20px;
-  padding-right: 20px;
+   padding-right: 20px;
   @media(max-width: 600px){
     font-size: 0.8rem;
     line-height: 1.3rem;
@@ -82,26 +79,47 @@ export default class extends React.Component {
         <Carousel>
             
               {
-                this.props.data.map((point)=>{return(
+                  this.props.data.map((point)=>{return(
                   <Item 
-                  key={point.node.id} 
-                  // src={point.node.projectimage.url}
-                  style={
-                      {
-                          backgroundImage: 'url(' + point.node.projectimage.url + ')', 
-                          backgroundSize: 'cover', 
-                          backgroundPosition: 'center center',
-                          backgroundRepeat: 'no-repeat'
-                  }}>
-                  >
+                    key={point.node.id} 
+                    // src={point.node.projectimage.url}
+                    style={
+                        {
+                            // marginLeft: '0px',
+                            // paddingLeft: '0px',
+                            // margin: "auto 0px",
+                            backgroundImage: 'url(' + point.node.projectimage.url + ')', 
+                            backgroundSize: 'cover', 
+                            backgroundPosition: 'center center',
+                            backgroundRepeat: 'no-repeat'
+                    }}>
+                  
 
                     <DescriptionContainer>
                       <ItemTitle>
                         {point.node.projecttitle}
                       </ItemTitle>
                       <Description>
-                        {point.node.projectdescription}                     
+                        {point.node.projectdescription} 
+                        {/* if({point.node.githubLink}){
+                          () => {
+                            return( */}
+                              <a href = {point.node.githublink}>Project's Github repositorium</a>
+                            {/* )
+                          }
+                        } */}
+
+                        {/* if({point.node.livelink}){
+                          ()=>{
+                            return( */}
+                              <a href= {point.node.livelink}>Demo</a>                    
+                            {/* )
+                          }
+
+                        
+                        } */}
                       </Description>
+                    
                     </DescriptionContainer>
                   </Item>
                 )})
