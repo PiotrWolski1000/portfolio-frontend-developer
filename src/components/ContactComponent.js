@@ -63,7 +63,7 @@ export default class ContactComponent extends React.Component  {
                 <AddintionalWrapper>
                 
                 <ContactForm>
-                    <form>
+                    <form name="contact" netlify>
 
                         <input type="hidden" name="form-name" value="contact"/>
                         <input name="name" type='text' placeholder="Name, Company name"/>
