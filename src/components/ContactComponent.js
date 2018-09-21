@@ -82,7 +82,7 @@ export default class ContactComponent extends React.Component  {
                 </ContactForm>
                 
                 <HintDiv>
-                Click the circle to send me a message!
+                    Click the circle to send me a message!
                 </HintDiv>
             
                 </AddintionalWrapper>

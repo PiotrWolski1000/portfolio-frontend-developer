@@ -26,7 +26,6 @@ const SectionTitle = styled.h1`
 
 
 const ProjectsComponent = ({ProjectsComponent}) => {
-    console.log(ProjectsComponent)
     return(
         <Wrapper>
             <AddintionalWrapper>
