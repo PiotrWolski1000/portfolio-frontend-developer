@@ -57,6 +57,16 @@ const Description = styled.div`
   word-wrap: wrap;
   padding-left: 20px;
    padding-right: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding-top:10px;
+  
+  } 
+  a:hover{
+    text-decoration: underline;
+  }
   @media(max-width: 600px){
     font-size: 0.8rem;
     line-height: 1.3rem;
