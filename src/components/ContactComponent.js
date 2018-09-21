@@ -63,19 +63,23 @@ export default class ContactComponent extends React.Component  {
                 <AddintionalWrapper>
                 
                 <ContactForm>
-                    <form name="contact" netlify>
+                    <form 
+                        name="contact"
+                        method="post"
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
+                    >
 
-                        <input type="hidden" name="form-name" value="contact"/>
                         <input name="name" type='text' placeholder="Name, Company name"/>
 
                         <input name="email" type="email" placeholder="Email address" />
                         <input name="phone" type="number" placeholder="Phone number"/>
                         <input name="mail_subject" type="text" placeholder="Subject/Title"/>
                         <textarea name="message" type="text" rows="4" cols="50" placeholder="Message" />
+                        <SendButtonComponent type="submit">
+                        </SendButtonComponent>
                     </form>
                 </ContactForm>
-                <SendButtonComponent>
-                </SendButtonComponent>
                 
                 <HintDiv>
                 Click the circle to send me a message!
