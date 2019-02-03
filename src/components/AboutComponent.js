@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     width: 100%;
     height: auto;
     position: relative;
