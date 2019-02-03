@@ -1,5 +1,4 @@
 import React from 'react'
-// import Link from 'gatsby-link'
 import styled from 'styled-components';
 import HeaderComponent from '../components/HeaderComponent';
 import MainComponent from '../components/MainComponent';
@@ -11,10 +10,9 @@ import ProjectsComponent from '../components/ProjectsComponent'
 
 const MainWrapper = styled.div`
   background-color: #fff6e6;
+
 `
 
-
-// const Index = ({data}) => {
 export default class Index extends React.Component {
   
   constructor(props) {
@@ -25,26 +23,12 @@ export default class Index extends React.Component {
     return (
       <MainWrapper>
         <HeaderComponent/>
-        <section id="main">
-          <MainComponent MainComponentData = {this.props.data.allDatoCmsMaincomponent.edges[0].node}/>
-        </section>
-        <section id="about" ref = "about">
-          <AboutComponent AboutComponentData = {this.props.data.allDatoCmsAboutcomponent.edges[0].node}/>
-        </section>
-        <section id = "skills"> 
-          <MySkillsComponent MySkillsComponent = {this.props.data.allDatoCmsMyskillscomponent.edges[0].node}/>
-        </section>
-        <section id = "projects">
-          <ProjectsComponent ProjectsComponent = {this.props.data. allDatoCmsProjectcontentcomponent.edges}/>
-        </section>
-      
-        <section id="contact">
-          <ContactComponent/>
-        </section>
-        
-        
+        <MainComponent id = "main" MainComponentData = {this.props.data.allDatoCmsMaincomponent.edges[0].node}/>
+        <AboutComponent id="about" AboutComponentData = {this.props.data.allDatoCmsAboutcomponent.edges[0].node}/>
+        <MySkillsComponent id = "skills" MySkillsComponent = {this.props.data.allDatoCmsMyskillscomponent.edges[0].node}/>
+        <ProjectsComponent id = "projects" ProjectsComponent = {this.props.data. allDatoCmsProjectcontentcomponent.edges}/>
+        <ContactComponent id="contact"/>
         <FooterComponent FooterComponent = {this.props.data.allDatoCmsFootercomponent.edges[0].node}/>
-
       </MainWrapper>
     )
   }
