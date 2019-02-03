@@ -1,4 +1,4 @@
-const API_TOKEN = process.env.GATSBY_SITE_API_TOKEN
+const API_TOKEN = process.env.API_TOKEN
 
 module.exports = {
   siteMetadata: {
