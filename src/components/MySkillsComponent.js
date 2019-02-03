@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import TextComponent from './TextComponent/TextComponent.js';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     width: 100%;
     height: auto;
     position: relative;

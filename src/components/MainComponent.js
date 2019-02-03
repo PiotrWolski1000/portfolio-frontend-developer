@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Typed from 'typed.js'
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     width: 100%;
     min-height: 500px;
     min-height: 400px;

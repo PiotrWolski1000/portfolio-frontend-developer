@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Carousel from './Carousel';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     width: 100%;
     /* min-height: 500px; */
     height: auto;
