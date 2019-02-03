@@ -39,6 +39,12 @@ const Form = styled.form`
     @media(min-width: 768px){
       width: 500px;
     }
+    textarea {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        /* position: absolute;
+        z-index: 1000; */
+    }
     textarea, input {
         border: 1px solid grey !important;
     }
