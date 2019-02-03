@@ -63,6 +63,9 @@ const Wrapper = styled.div`
         flex-direction: column;
 
             @media (max-width: 600px){
+                /* border-left: none;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #416B89; */
                 font-size: 1.2rem;
                 line-height: 1.2rem;
             }
@@ -100,6 +103,7 @@ const MiniTitle = styled.h2`
 
 
 const FooterComponent = ({FooterComponent}) => {
+    console.log('footer comp: ', FooterComponent)
     return(
         <MainWrapper>
             <MiniTitle>
@@ -161,7 +165,7 @@ const FooterComponent = ({FooterComponent}) => {
             </Wrapper>
 
             <BottomFooter>
-                © 2018
+                © {(typeof window)? new Date().getFullYear():''}
             </BottomFooter>   
         </MainWrapper>
     )
