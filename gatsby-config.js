@@ -1,3 +1,5 @@
+const API_TOKEN = process.env.GATSBY_SITE_API_TOKEN
+
 module.exports = {
   siteMetadata: {
     title: 'Piotr Wolski Frontend Developer',
@@ -8,7 +10,7 @@ module.exports = {
       options: {
         // You can find your read-only API token under the Settings > API tokens
         // section of your administrative area:
-        apiToken: `be9354083b6bcdd223b7ac822103d2`,
+        apiToken: API_TOKEN,
   
         // If you are working on development/staging environment, you might want to
         // preview the latest version of records instead of the published one:
