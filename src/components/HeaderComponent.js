@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: flex-end;
     
-    z-index: 1;
+    z-index: 999;
     .toggleOn {
         div{
             ${this}:nth-child(1) {
@@ -131,7 +131,6 @@ const HoverMenu = styled.ul`
 
 
     @media(min-width: 600px){
-        /* background-color: yellow; */
         display: flex;
         height: 75px;
         position: relative;
@@ -142,11 +141,9 @@ const HoverMenu = styled.ul`
             justify-content: center;
             align-items: center;
             margin: 0 0 0 5px;
-            /* background-color: blue; */
         }
         a{
             padding: 25px 20px 25px 20px;
-            /* background-color: red; */
             color: white;
             text-decoration: none;
         }
@@ -166,9 +163,6 @@ class HeaderComponent extends Component {
     }
 
     burgerToggle = () => {
-        
-        console.log('hello from burger!', this.state.menuToggle)
-        
         this.setState(
             prevState => ({menuToggle: !prevState.menuToggle})
         )
