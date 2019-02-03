@@ -40,11 +40,11 @@ const Form = styled.form`
       width: 500px;
     }
     textarea {
-        -webkit-transform: translate3d(0, 0, 0);
+        /* -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         position: relative;
         /* position: absolute; */
-        z-index: 2;
+        /* z-index: 2; */
     }
     textarea, input {
         border: 1px solid grey !important;
@@ -70,6 +70,9 @@ const Form = styled.form`
         }
     }
     label {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        position: relative;
         z-index: 1;
         display: inline-block;
         display: block;
