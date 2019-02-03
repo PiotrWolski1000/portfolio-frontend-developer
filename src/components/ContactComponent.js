@@ -42,8 +42,9 @@ const Form = styled.form`
     textarea {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        /* position: absolute;
-        z-index: 1000; */
+        position: relative;
+        /* position: absolute; */
+        z-index: 2;
     }
     textarea, input {
         border: 1px solid grey !important;
