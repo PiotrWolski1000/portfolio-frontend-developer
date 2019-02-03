@@ -1,154 +1,191 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
-
-import $ from "jquery";
 
 const Wrapper = styled.div`
     background-color: #042740;
+    
     width: 100%;
+
     min-height: 75px;
-    height: auto;
+    height: ${props => props.menuToggle?'220px':'75px'};
+    transition: height 0.5s ease;
+
+
     border-bottom: #416B89 solid 2px;
+
     position: fixed;
     top: 0px;
 
+
     display: flex;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: flex-end;
+    
     z-index: 1;
-`
-
-const Menu = styled.div`
-    .cross {
-        text-align: center;
-        width: 100%;
-        height: auto;
-        background: purple; 
-    }
-`
-const MainNav = styled.nav`
-    display: block;
-
-    a {
-        padding-right: 15px;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    #toggle {/* checkbox hidden, is a trigger for showing off the block of <a> elements */
-        display: none;
-    }
-
-    ${Burger} svg {
-        /* at this moment(big resolution) we do not want to show our hamburger icon */
-        display: none;
-    }
-
-    @media (max-width: 600px) {
-        display: flex;
-        align-content: center;
-        
-        #toggle:checked + .menu {
-            display: block;
+    .toggleOn {
+        /* div{
+            background-color: red !important;
+        } */
+        div{
+            ${this}:nth-child(1) {
+                transform: rotate(45deg) translateX(12px) translateY(9px);
+            }
+            ${this}:nth-child(2) {
+                opacity: 0;
+                transition: 0.2s opacity ease;
+            }
+            ${this}:nth-child(3) {
+                transform: rotate(-45deg)  translateX(10px) translateY(-8px);
+            }
+            transition: all 0.5s ease;
         }
+    }
+
+    .toggleOff {
+        div{
+            ${this}:nth-child(1) {
+                transform: rotate(0) translate(0px, 0px);
+            }
+            ${this}:nth-child(2) {
+                opacity: 1;
+                transition: 1s opacity ease;
+            }
+            ${this}:nth-child(3) {
+                transform: rotate(0deg) translate(0px, 0px);
+            }
+            transition: all 0.5s ease;
+        }
+    }
+
+
+`
+const Burger = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+
+    justify-content: center;
+    align-items: center;
+
+    ${this}:hover{
+        cursor: pointer;
+    }
+
+    div {
+        width: 40px;
+        height: 4px;
+
+        margin: 5px 0;
+        border-radius: 5px;
+
+        background-color: white;
+    }
+
+    
+
+
+    @media(min-width: 600px){
+        display: none;
+    }
+`
+
+const HoverMenu = styled.ul`
+    @media(max-width: 599px){
+
+        display: block;
+        height: 120px;
+
+
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+
+        height: ${props => props.menuToggle?'140px':'0px'};
+        transition: height 0.2s ease;
+
+        opacity: ${props => props.menuToggle?'1':'0'};
+        transition: opacity 0.5s ease;
         
-        ${Burger} {
+        /* position: relative; */
+
+        transform: translateY(30px);
+        transition: transform 1s ease;
+        
+        width: 100%;
+
+        li {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            svg {
-                display: flex;
-                width: 50px;
-                height: 75px;
-                cursor: pointer;
-                -webkit-transform: translate3d(0, 0, 0);
-                -moz-transform: translate3d(0, 0, 0);
-                -o-transform: translate3d(0, 0, 0);
-                -ms-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-            }
-            path {
-                fill: none;
-                -webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-                -moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-                -o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-                -ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-                transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-                stroke-width: 40px;
-                stroke-linecap: round;
-                stroke: #fff6e6;
-                stroke-dashoffset: 0px;
-            }
-            
-            path#top,
-            path#bottom {
-                stroke-dasharray: 240px 950px;
-            }
-            path#middle {
-                stroke-dasharray: 240px 240px;
-            }
-            .cross path#top,
-            .cross path#bottom {
-                stroke-dashoffset: -650px;
-                stroke-dashoffset: -650px;
-            }
-            .cross path#middle {
-                stroke-dashoffset: -115px;
-                stroke-dasharray: 1px 220px;
-            }
         }
         a {
-            /* the reason of this line is that nav disappear on also on large devices*/
-            display: none;
-        }
-        .cross a {
+            display: block; 
             width: 100%;
-            display: block;
-            padding-bottom: 10px;
-            text-indent: 10px;
-        }
-
-        .cross a:hover {
-            background: #042740;
-            text-decoration: underline;
+            color: white;
+            text-decoration: none;
+            
+            ${this}:hover{
+                background-color: #063E66;
+            }
         }
     }
 
+
+    @media(min-width: 600px){
+        /* display: inline-block; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        list-style: none;
+        li {
+            padding: 20px;
+            margin: 0 10px 0 10px;
+        }
+    }
 `
 
-const Burger = styled.div`
+class HeaderComponent extends Component {
+    constructor(props){
+        super(props)
+     
+        this.state = {
+            menuToggle: false,
+        }
+    }
 
-`
+    burgerToggle = () => {
+        
+        console.log('hello from burger!', this.state.menuToggle)
+        
+        this.setState(
+            prevState => ({menuToggle: !prevState.menuToggle})
+        )
+    
+    }
 
-const HeaderComponent = ({}) => {
-
-    return(
-        <Wrapper>
-            
-            <MainNav>
-                <Burger onClick={()=> {
-                          return $("div").toggleClass("cross");
-                }}>
-
-                    <svg htmlFor="toggle" viewBox="0 0 800 600">
-                        <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
-                        <path d="M300,320 L540,320" id="middle"></path>
-                        <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
-                    </svg>
-                    <input type="checkbox" id="toggle"/>
-                    
-                    <Menu className = "menu">
-                        <a href="#about">About</a> 
-                        <a href="#contact">Contact</a> 
-                        <a href="#skills">Skills</a> 
-                        <a href="#projects">Projects</a>
-                    </Menu>
+    render() {
+        return (
+            <Wrapper menuToggle={this.state.menuToggle}>
+                <Burger onClick={this.burgerToggle} className={this.state.menuToggle?'toggleOn':'toggleOff'}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </Burger>
-            </MainNav>
-        </Wrapper>   
-    )
-  }
-  export default HeaderComponent;
+                <HoverMenu menuToggle={this.state.menuToggle}>
+                    <li><a href="#">About me</a></li>
+                    <li><a href="#">Stack</a></li>
+                    <li><a href="#">My projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </HoverMenu>
+            </Wrapper> 
+        )
+    }
+}
+
+export default HeaderComponent;
