@@ -5,7 +5,6 @@ import styled from 'styled-components'
 const DescriptionContainer = styled.div`
   
 `
-
 const Item = styled.div`
   width: 100%;
   min-height: 500px;
@@ -20,7 +19,6 @@ const Item = styled.div`
     text-transform: lowercase;
 
 } 
-
   &:hover {
     display: flex;
     width: 100%;
@@ -59,7 +57,8 @@ const Description = styled.div`
    padding-right: 20px;
 
   a {
-    color: white;
+    /* color: white; */
+    color: #ffc700;
     text-decoration: none;
     padding-top:10px;
   
@@ -79,12 +78,7 @@ export default class extends React.Component {
     super(props)
   }
 
-
   render() {
-    // console.log(this.props.data)
-    // console.log(this.props.data[0].node.id)
-    // const iterator = 5;
-    // const data = ['slide1','slide2','slide3','slide4','slide5']
     return (
         <Carousel>
             
@@ -92,12 +86,8 @@ export default class extends React.Component {
                   this.props.data.map((point)=>{return(
                   <Item 
                     key={point.node.id} 
-                    // src={point.node.projectimage.url}
                     style={
                         {
-                            // marginLeft: '0px',
-                            // paddingLeft: '0px',
-                            // margin: "auto 0px",
                             backgroundImage: 'url(' + point.node.projectimage.url + ')', 
                             backgroundSize: 'cover', 
                             backgroundPosition: 'center center',
@@ -111,39 +101,19 @@ export default class extends React.Component {
                       </ItemTitle>
                       <Description>
                         {point.node.projectdescription} 
-                        {/* if({point.node.githubLink}){
-                          () => {
-                            return( */}
-                              <a href = {point.node.githublink}>Project's Github repositorium</a>
-                            {/* )
-                          }
-                        } */}
-
-                        {/* if({point.node.livelink}){
-                          ()=>{
-                            return( */}
-                              <a href= {point.node.livelink}>Demo</a>                    
-                            {/* )
-                          }
-
                         
-                        } */}
+                        {point.node.githublink?(
+                          <a href = {point.node.githublink}>Project's Github repositorium</a>
+                        ):(null)}
+                        
+                        {point.node.livelink?(
+                          <a href= {point.node.livelink}>Demo</a>                    
+                        ):(null)}
                       </Description>
-                    
                     </DescriptionContainer>
                   </Item>
                 )})
               }
-
-
-
-            
-            {/* <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" />
-            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2" />
-            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3" />
-            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4" />
-            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5" />
-            <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6" /> */}
         </Carousel>
     );
   }
