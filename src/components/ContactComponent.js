@@ -39,12 +39,8 @@ const Form = styled.form`
     @media(min-width: 768px){
       width: 500px;
     }
-    textarea {
-        /* -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        position: relative;
-        /* position: absolute; */
-        /* z-index: 2; */
+    @media(min-width: 1024px){
+      width: 800px;
     }
     textarea, input {
         border: 1px solid grey !important;
@@ -70,18 +66,13 @@ const Form = styled.form`
         }
     }
     label {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        position: relative;
-        z-index: 1;
         display: inline-block;
         display: block;
         position:relative;
         left: 2px;
         bottom: -29px;
         transition: all 150ms ease-in;
-          /* color: #737373; */
-          color: #000000;
+        color: #000000;
         cursor: default;
     }
     label.field-active {
