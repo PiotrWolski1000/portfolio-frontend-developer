@@ -18,15 +18,11 @@ const Wrapper = styled.div`
 
 
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: flex-end;
     
     z-index: 1;
     .toggleOn {
-        /* div{
-            background-color: red !important;
-        } */
         div{
             ${this}:nth-child(1) {
                 transform: rotate(45deg) translateX(12px) translateY(9px);
@@ -110,8 +106,6 @@ const HoverMenu = styled.ul`
         opacity: ${props => props.menuToggle?'1':'0'};
         transition: opacity 0.5s ease;
         
-        /* position: relative; */
-
         transform: translateY(30px);
         transition: transform 1s ease;
         
@@ -137,15 +131,27 @@ const HoverMenu = styled.ul`
 
 
     @media(min-width: 600px){
-        /* display: inline-block; */
+        /* background-color: yellow; */
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: green;
+        height: 75px;
+        position: relative;
+        top: 12px;
         list-style: none;
         li {
-            padding: 20px;
-            margin: 0 10px 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 0 5px;
+            /* background-color: blue; */
+        }
+        a{
+            padding: 25px 20px 25px 20px;
+            /* background-color: red; */
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: #416B89; 
         }
     }
 `
