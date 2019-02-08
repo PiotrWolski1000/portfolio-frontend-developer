@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import SendButtonComponent from './SendButtonComponent.js'
 
 const Wrapper = styled.section`
     width: 100%;
@@ -218,7 +217,8 @@ export default class ContactComponent extends React.Component  {
                         method="post"
                         data-netlify="true"
                         data-netlify-honeypot="bot-field"
-                    >
+                    >   
+                        <input type = 'hidden' name="bot-field" />
                         <label 
                             htmlFor='name'
                             className={this.state.nameFieldActive ? "field-active" : ""}
