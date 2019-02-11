@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Typed from 'typed.js'
+// import Typed from 'typed.js'
 
 
 const Wrapper = styled.section`
@@ -47,39 +47,34 @@ const AddintionalWrapper = styled.div`
 `
 
 class MainComponent extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
-    componentDidMount = () => {
-        // www.mattboldt.com
-        const typedEl = new Typed(".text", {
-            strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website :)"],
-            typeSpeed: 100,
-            backSpeed: 30,
-            loop: true,
-        })
-    }
+    // componentDidMount = () => {
+    //     // www.mattboldt.com
+    //     const typedEl = new Typed(".text", {
+    //         strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website :)"],
+    //         typeSpeed: 100,
+    //         backSpeed: 30,
+    //         loop: true,
+    //     })
+    // }
 
     render()
     {
         return(
-            <Wrapper style={
-                {
-                    backgroundImage: 'url(' + this.props.MainComponentData.mainpicture.url + ')', 
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center center',
-                    backgroundRepeat: 'no-repeat'
+            <Wrapper style={{
+                backgroundImage: 'url(' + this.props.MainComponentData.mainpicture.url + ')', 
+                backgroundSize: 'cover', 
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
             }}>
-                <AddintionalWrapper>
-                
+                <AddintionalWrapper> 
                     <div className = "text"></div>
-
                 </AddintionalWrapper>
             </Wrapper>   
         )
     }
   }
   export default MainComponent;
-
-  true

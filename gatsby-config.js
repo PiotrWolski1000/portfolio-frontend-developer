@@ -1,5 +1,5 @@
-const API_TOKEN = process.env.API_TOKEN
-
+let API_TOKEN = process.env.API_TOKEN
+API_TOKEN = 'be9354083b6bcdd223b7ac822103d2';
 module.exports = {
   siteMetadata: {
     title: 'Piotr Wolski Frontend Developer',
@@ -21,6 +21,13 @@ module.exports = {
   
         // Custom API base URL
         // apiUrl: 'https://site-api.datocms.com',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/img/`,
       },
     },
   ],

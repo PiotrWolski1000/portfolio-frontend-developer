@@ -91,7 +91,7 @@ const SectionTitle = styled.h1`
 `
 
 const MySkillsComponent = ({MySkillsComponent}) => {
-    // console.log("to: "+ MySkillsComponent)
+    
     let listImages = [MySkillsComponent.html5, 
         MySkillsComponent.javascript,
         MySkillsComponent.css3,
@@ -111,11 +111,15 @@ const MySkillsComponent = ({MySkillsComponent}) => {
             
             {/* <TextComponent>test</TextComponent> */}
             
-            {/* {listImages.map((card)=>{return(<img src = {card}></img>)})} */}
+            {listImages.map(
+                (card)=>{
+                    return(<img src = {card} alt={'asd'}/>)
+                })}
             
             <div className='flip3D'>
                 <div className='front'>
-                    <img src = {MySkillsComponent.html5.url}></img>
+                    <img src = {MySkillsComponent.html5.url} alt = {''}>
+                    </img>
                 </div>
                 <div className='back'>
                     <p> HTML5 </p>

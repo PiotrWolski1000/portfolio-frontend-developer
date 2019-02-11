@@ -10,7 +10,6 @@ const Wrapper = styled.section`
 `
 
 const AddintionalWrapper = styled.div`
-    /* height: auto; */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,6 +7,7 @@ import MySkillsComponent from '../components/MySkillsComponent';
 import FooterComponent from '../components/FooterComponent';
 import ContactComponent from '../components/ContactComponent';
 import ProjectsComponent from '../components/ProjectsComponent'
+import Helmet from 'react-helmet'
 
 const MainWrapper = styled.div`
   background-color: #fff6e6;
@@ -15,13 +16,15 @@ const MainWrapper = styled.div`
 
 export default class Index extends React.Component {
   
-  constructor(props) {
-    super(props)
-  }
   render(){
 
     return (
-      <MainWrapper>
+      <MainWrapper> 
+        <Helmet>
+          <title>Piotr Wolski</title>
+          <meta name="description" content="Piotr Wolski, I'm a Javascript, React Developer for hire. Contact me via contact form, phone 724121098 or e-mail p.wolski1000@gmail.com." />
+        </Helmet>
+
         <HeaderComponent/>
         <MainComponent id = "main" MainComponentData = {this.props.data.allDatoCmsMaincomponent.edges[0].node}/>
         <AboutComponent id="about" AboutComponentData = {this.props.data.allDatoCmsAboutcomponent.edges[0].node}/>
@@ -33,8 +36,6 @@ export default class Index extends React.Component {
     )
   }
 }
-
-// export default Index;
 
 
 export const query = graphql`

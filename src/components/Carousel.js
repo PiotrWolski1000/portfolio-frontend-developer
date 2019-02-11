@@ -74,9 +74,6 @@ const Description = styled.div`
 `
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (

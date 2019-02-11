@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import Logo from './../img/Logo.svg'
+
 
 const Wrapper = styled.div`
+    
     background-color: #042740;
     
     width: 100%;
@@ -172,17 +175,20 @@ class HeaderComponent extends Component {
     render() {
         return (
             <Wrapper menuToggle={this.state.menuToggle}>
-                <Burger onClick={this.burgerToggle} className={this.state.menuToggle?'toggleOn':'toggleOff'}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </Burger>
-                <HoverMenu menuToggle={this.state.menuToggle}>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Stack</a></li>
-                    <li><a href="#">My projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </HoverMenu>
+                    <Logo>
+                        <img src={Logo} width="100%" height="100%"/>    
+                    </Logo>   
+                    <Burger onClick={this.burgerToggle} className={this.state.menuToggle?'toggleOn':'toggleOff'}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </Burger>
+                    <HoverMenu menuToggle={this.state.menuToggle}>
+                        <li><a href="#">About me</a></li>
+                        <li><a href="#">Stack</a></li>
+                        <li><a href="#">My projects</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </HoverMenu>
             </Wrapper> 
         )
     }
