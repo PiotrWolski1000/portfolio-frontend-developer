@@ -38,14 +38,127 @@ export default IndexPage
 
 
 export const query = graphql`
-query onepage {
-  logo: file(relativePath: { eq: "logo.png" }) {
-    childImageSharp{
-      fixed(width: 500, height: 100) {
-        ...GatsbyImageSharpFixed
-      }
-    }
-  } 
+{
 
-}
-`
+  site{
+    
+    siteMetadata{
+      title
+      author
+      description
+    }
+    children{
+      id
+    }
+  }
+  }`
+
+
+
+// allDatoCmsMaincomponent {
+//   edges{
+//     node{
+//       mainpicture{
+//         url
+//       }
+//       maincomponenttext
+//     }
+//   }
+// }
+// allDatoCmsAboutcomponent {
+//   edges{
+//     node{
+//       myphoto{
+//         url
+//         width
+//         height
+//       }
+//       description
+//     }
+//   }
+// }
+// allDatoCmsMyskillscomponent{
+//   edges{
+//     node{
+//       javascriptimage {
+//         url
+//       }
+//       html5 {
+//         url
+//       }
+//       css3 {
+//         url
+//       }
+//       nodejs {
+//         url
+//       }
+//       react {
+//         url
+//       }
+//       npm {
+//         url
+//       }
+//       photoshop {
+//         url
+//       }
+//       ubuntuos {
+//         url
+//       }
+//       windowsos {
+//         url
+//       }
+//       github {
+//         url
+//       }
+    
+//     }
+//   }
+// }
+// allDatoCmsFootercomponent{
+//   edges{
+//     node{
+//       phoneimage{
+//         url
+//       }
+//       facebookimage{
+//         url
+//       }
+//       linkedinimage{
+//         url
+//       }
+//       instagramimage{
+//         url
+//       }
+//       githubimage{
+//         url
+//       }
+//       atimage{
+//         url
+//       }
+//       twitterimage{
+//         url
+//       }
+//       twitterlink
+//       email
+//       githublink
+//       instagramtext
+//       facebooktext
+//       phonenumber
+//       linkedintext
+//     }
+//   }
+// }
+// allDatoCmsProjectcontentcomponent{
+//   edges{
+//     node{
+//       id
+//       projecttitle
+//       projectdescription
+//       projectimage{
+//         url
+//       }
+//       githublink
+//       livelink
+//     }
+//   }
+// }

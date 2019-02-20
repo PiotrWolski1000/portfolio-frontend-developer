@@ -76,8 +76,8 @@ export const HorizontalMenu = styled.ul`
     li {
         
         /* background-color: pink; */
-        padding: 19px 10px 19px 10px;
-        margin-left: 10px;
+        /* padding: 19px 10px 19px 10px; */
+        /* margin-left: 10px; */
         &:hover{
             background-color: black;
             a {
