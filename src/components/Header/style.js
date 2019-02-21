@@ -17,23 +17,6 @@ export const Logo = styled.svg`
      min-width: 300px; 
      pointer-events: none;
      font-size: 2rem;
-     .name{
-         @media(max-width: 320px){
-            font-size: 1.5rem;
-         }
-
-         @media(min-width: 500px){
-            font-size: 2rem;
-         }
-
-         @media(min-width: 768px){
-            font-size: 3rem;
-         }
-     } 
-
-     @media(min-width: 768px){
-        width: 400px;  
-     }
 `
 
 export const HamburgerMenu = styled.div`
@@ -71,13 +54,9 @@ export const HamburgerMenu = styled.div`
 
 export const HorizontalMenu = styled.ul`
     position: relative;
-    top: 10px;
+    top: 25px;
     list-style: none;
     li {
-        
-        /* background-color: pink; */
-        /* padding: 19px 10px 19px 10px; */
-        /* margin-left: 10px; */
         &:hover{
             background-color: black;
             a {
@@ -91,12 +70,11 @@ export const HorizontalMenu = styled.ul`
             color: black;
         }
         &:visited{
-            color: orange;
+            color: black;
         }
         position: relative;
         top: 2px;
         padding: 24px 10px 20px 10px;
-        /* background-color: red; */
     }
     @media(max-width: 768px){
         display:none;
@@ -115,10 +93,29 @@ export const Menu = styled.div`
   opacity: ${props => props.isVisible ? '1'  : '0'};
   flex-direction: column;
   visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
-  height: ${props => props.isVisible ? '200px'  : '0px'};
+  height: ${props => props.isVisible ? '180px'  : '0px'};
   transition: height 0.5s ease, visibility 0s;
   ul {
     list-style: none;
+  }
+
+  ${Link} {
+    font-family: 'Orbitron';
+    a{
+      text-decoration: none;
+      padding: 10px 0 10px 25px;
+      &:link {
+        color: black;
+      }
+      &:visited {
+        color: black;
+      }
+      &:hover{
+        background: black;
+        color: white;
+      }
+       
+    }
   }
 `
 

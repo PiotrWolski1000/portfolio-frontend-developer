@@ -13,45 +13,43 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-  {console.log('my data: ', data)}
-    <div style={{backgroundColor: 'black'}}>
-    {/* <Img fixed={data.logo.childImageSharp.fixed}/> */}
-
-    </div>
-
+  {console.log('allDatoCmsMainComponent ', data)}
+    {/* seo as well from datocms  */}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wrocław', 'Wroclaw']} />
-    <MainImage></MainImage>
+    <MainImage source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
     <AboutMe></AboutMe>    
     <MySkills></MySkills>
     <MyProjects></MyProjects>
     <Contact></Contact>
-{/* my logo here for a moment */}
-    
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-
   </Layout>
 )
 
 export default IndexPage
 
 
-export const query = graphql`
-{
-
-  site{
-    
-    siteMetadata{
-      title
-      author
-      description
-    }
-    children{
-      id
+export const query = graphql`{
+  allDatoCmsMaincomponent{
+    edges{
+      node{
+        locale
+        mainpicture{
+          
+          fluid(maxWidth: 1920){
+            srcSet
+            aspectRatio
+            sizes
+            base64
+            ...GatsbyDatoCmsFluid
+          }
+        }
+        
+        maincomponenttext
+      }
     }
   }
-  }`
+
+
+}`
 
 
 

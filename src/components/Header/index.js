@@ -43,7 +43,6 @@ class index extends Component {
               <Link to='/'>
                 <Tag.Logo>
                   <text 
-                    className= 'name'
                     x="25"
                     y="120" 
                     fill="black" 
@@ -83,7 +82,7 @@ class index extends Component {
                     {
                       navigation.map((item, i) => {  
                         return (
-                          <Link  activeStyle = {{color: 'black', paddingLeft: '5px', borderLeft: 'red solid 4px'}} key = {`menu_link${i}`} to={item.path}> 
+                          <Link  activeStyle = {{}} key = {`menu_link${i}`} to={item.path}> 
                             
                             {item.name}
                           
