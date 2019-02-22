@@ -2,14 +2,16 @@
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 export const Wrapper = styled.div`
-    background: white;
+    /* background: white; */
+    background-color: white;
+
     width: 100%;
     height: 150px;
     font-family: 'Orbitron';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99999;
+
 `
 
 export const Logo = styled.svg`
@@ -21,7 +23,7 @@ export const Logo = styled.svg`
 
 export const HamburgerMenu = styled.div`
     position: absolute;
-    top: 67px;
+    top: 65px;
     right: 2rem;
 
   & > div {
@@ -88,6 +90,9 @@ export const HorizontalMenu = styled.ul`
     }
 `
 export const Menu = styled.div`
+  /* position: relative;
+  position:  */
+/* position relative added as testesd value */
   width: 100%;
   display: flex;
   opacity: ${props => props.isVisible ? '1'  : '0'};
@@ -120,5 +125,26 @@ export const Menu = styled.div`
 `
 
 export const MainWrapper = styled.header`
+  display: block; 
+  width: 100%;
   height: auto;
+  z-index: 10;
+  /* top: -150px; */
+  /* transform: translateY(0px); */
+  /* position: fixed;
+  top: 0px; */
+  
+  .showMenu{
+    /* top: 0px;   */
+    /* transform: translateY(-150px);     */
+  /* transition: top 2s ease; */
+    
+  }
+  .hideMenu{
+    /* top: -150px; */
+
+  /* transition: top 2s ease; */
+    /* transform: translateY(-300px);   */
+  }
+
 `

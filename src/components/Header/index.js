@@ -21,12 +21,39 @@ const navigation = [
     path: '#kontakt'
   }
 ]
-class index extends Component {
 
-  state = {
-    collapsed: false,
-    path: '/'
+
+class index extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      hide: false,
+      collapsed: false,
+      path: '/'
+    }    
   }
+
+  componentDidMount = () => {
+    if(window !== 'undefined')
+    {
+      let prevScrollpos = window.pageYOffset;
+    
+      window.onscroll = () => {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {//scroll up
+            this.setState({hide: true})
+            console.log('w gore, pokaz', this.state.hide)
+          } else {//scroll down
+            console.log('w dol, hide', this.state.hide)
+            this.setState({hide: false})
+            // this.setState({collapse: true})
+            // handleCollapseMenu()
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    }
+  }
+  
 
   handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
 
@@ -38,7 +65,7 @@ class index extends Component {
     render={data => {
       const { collapsed } = this.state
       return (
-        <Tag.MainWrapper>
+        <Tag.MainWrapper className={this.state.hide?"showMenu":"hideMenu"}>
           <Tag.Wrapper>
               <Link to='/'>
                 <Tag.Logo>
@@ -68,7 +95,7 @@ class index extends Component {
                   navigation.map((item, i) => {
                     return (
                       <li key={`horizontal_li${i}`}>
-                        <Link activeStyle={{}} key = {`menu_desktop_link${i}`} to={item.path}> 
+                        <Link activeStyle={{}} key = {`menu_desktop_link${i}`} onClick = {()=>{console.log('sup')}}to={item.path}> 
                           {item.name}    
                         </Link>
                       </li>)

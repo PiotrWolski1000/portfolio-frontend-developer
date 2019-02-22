@@ -13,13 +13,17 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-  {console.log('allDatoCmsMainComponent ', data)}
+    {console.log(' allDatoCmsProjectcontentcomponent: ', data.allDatoCmsProjectcontentcomponent)}
+  {/* {console.log('allDatoCmsMainComponent ', data)} */}
+    {/* {console.log('allDatoCmsAboutComponent: ', data.allDatoCmsAboutcomponent)} */}
+    {/* {console.log('allDatoCmsMySkillsComponent: ', data.allDatoCmsMyskillscomponent)} */}
+    {/* {console.log('description cards', data.allDatoCmsDescriptioncardcomponent)} */}
     {/* seo as well from datocms  */}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wrocław', 'Wroclaw']} />
     <MainImage source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
-    <AboutMe></AboutMe>    
-    <MySkills></MySkills>
-    <MyProjects></MyProjects>
+    <AboutMe source={data.allDatoCmsAboutcomponent}></AboutMe>    
+    <MySkills source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
+    <MyProjects source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
     <Contact></Contact>
   </Layout>
 )
@@ -48,70 +52,96 @@ export const query = graphql`{
     }
   }
 
+  allDatoCmsAboutcomponent{
+    edges{
+      node{
+      	locale
+      	myphoto{
+          fixed(width: 250){
+            srcSet
+            src
+            aspectRatio
+            base64
+            ...GatsbyDatoCmsFixed
+          }
+        }
+        description
+      }   
+    }
+  }
+
+  allDatoCmsMyskillscomponent{
+    edges{
+      node{
+      	javascriptimage{
+          url
+        }
+        html5{
+          url
+        }
+        css3{
+          url
+        }
+
+        nodejs{
+          url
+        }
+        react{
+          url
+        }
+        npm{
+          url
+        }
+        photoshop{
+          url
+        }
+        ubuntuos{
+          url
+        }
+
+        windowsos{
+          url
+        }
+
+        github{
+          url 
+       }        
+      }   
+    }
+  }
+  allDatoCmsDescriptioncardcomponent{
+    edges{
+      node{
+        locale
+        text
+      }
+    }
+  }
+  allDatoCmsProjectcontentcomponent{
+    edges{
+      node{
+        # locale
+         projecttitle
+        projectdescription
+        projectimage{
+          fluid(maxWidth: 1000){
+            srcSet
+            aspectRatio
+            sizes
+            base64
+            ...GatsbyDatoCmsFluid
+          }
+          
+        }
+        githublink
+        livelink
+      }
+    }
+  }
 
 }`
 
 
-
-// allDatoCmsMaincomponent {
-//   edges{
-//     node{
-//       mainpicture{
-//         url
-//       }
-//       maincomponenttext
-//     }
-//   }
-// }
-// allDatoCmsAboutcomponent {
-//   edges{
-//     node{
-//       myphoto{
-//         url
-//         width
-//         height
-//       }
-//       description
-//     }
-//   }
-// }
-// allDatoCmsMyskillscomponent{
-//   edges{
-//     node{
-//       javascriptimage {
-//         url
-//       }
-//       html5 {
-//         url
-//       }
-//       css3 {
-//         url
-//       }
-//       nodejs {
-//         url
-//       }
-//       react {
-//         url
-//       }
-//       npm {
-//         url
-//       }
-//       photoshop {
-//         url
-//       }
-//       ubuntuos {
-//         url
-//       }
-//       windowsos {
-//         url
-//       }
-//       github {
-//         url
-//       }
-    
-//     }
-//   }
-// }
 // allDatoCmsFootercomponent{
 //   edges{
 //     node{
