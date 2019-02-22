@@ -9,7 +9,7 @@ import Img from 'gatsby-image'
 const Wrapper = styled.div`
   font-size: 1.5rem;
   line-height: 1.5rem;
-  max-width: 500px;
+  /* max-width: 500px; */
   display: flex;
   justify-content: center;
   align-items: center;

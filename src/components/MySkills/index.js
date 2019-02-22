@@ -8,17 +8,6 @@ class index extends Component {
 
     }
     render() {
-
-        // console.log('props image skill: ', this.props.source.html5)
-        // console.log('props description card: ', this.props.text[0].node.text)
-        // console.log('props description card: ', this.props.text[1].node.text)
-        // console.log('props description card: ', this.props.text[2].node.text)
-        // console.log('props description card: ', )
-        // console.log('props description card: ', )
-        // console.log('props description card: ', )
-        // console.log('props description card: ', )
-        // console.log('props description card: ', 
-        // console.log('props description card: ', )
         const data = [
             {
                 link: this.props.source.javascriptimage.url,
@@ -61,10 +50,12 @@ class index extends Component {
                 description: this.props.text[9].node.text                                                
             }
         ]
-        // data.map((item, i) => {item.description = this.props.text[i]})
-            // console.log('data: ',data)        
+     
         return (
             <Tag.Wrapper>
+                <h1 style={{textAlign: 'center'}}>
+                    {this.props.sectionTitle}
+                </h1>
                 <Tag.AddintionalWrapper>
                     {data.map((item, i) => {
                         return(

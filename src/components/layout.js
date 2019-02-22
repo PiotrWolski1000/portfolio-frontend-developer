@@ -8,7 +8,7 @@ import "./layout.css"
 import Footer from '../components/Footer'
 
 
-const Layout = ({ children }) => (
+const Layout = ({ children, data }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -17,17 +17,55 @@ const Layout = ({ children }) => (
             title
           }
         }
+
+        allDatoCmsFootercomponent{
+          edges{
+            node{
+              phoneimage{
+                url
+              }
+              facebookimage{
+                url
+              }
+              linkedinimage{
+                url
+              }
+              instagramimage{
+                url
+              }
+              githubimage{
+                url
+              }
+              atimage{
+                url
+              }
+              twitterimage{
+                url
+              }
+              twitterlink
+              email
+              githublink
+              instagramtext
+              facebooktext
+              phonenumber
+              linkedintext
+            }
+          }
+        }
+
       }
     `}
     render={data => (
       <>
+      
+          {console.log('data from layout: ', data.allDatoCmsFootercomponent)}
         <Header siteTitle={data.site.siteMetadata.title} />
         
           <main>
             {children}
           </main>
 
-          <Footer></Footer>
+          <Footer data={data.allDatoCmsFootercomponent.edges[0].node}></Footer>
       </>
     )}
   />

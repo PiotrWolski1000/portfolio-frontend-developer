@@ -12,7 +12,6 @@ class index extends Component {
     //Thanks to www.mattboldt.com.
     new Typed(".element", {
         strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website"],
-        // strings: ['My strings are: <i>strings</i> with', 'My strings are: <strong>HTML</strong>', 'My strings are: Chars &times; &copy;'],
         cursorChar: '_',
         showCursor: false,
         typeSpeed: 0,
@@ -24,7 +23,7 @@ class index extends Component {
   render() {
     return (
       <Tag.Wrapper>
-        <Img fluid={this.props.source} />
+        <Img width="200px" height="200px" fluid={this.props.source} />
         <h1 className="element"></h1>
       </Tag.Wrapper>
     );

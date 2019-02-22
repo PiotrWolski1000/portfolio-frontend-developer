@@ -13,17 +13,20 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    {console.log(' allDatoCmsProjectcontentcomponent: ', data.allDatoCmsProjectcontentcomponent)}
+    
+    {/* {console.log('footer data: ', data.allDatoCmsFootercomponent.edges[0].node)} */}
+    {/* {console.log(' allDatoCmsProjectcontentcomponent: ', data.allDatoCmsProjectcontentcomponent)} */}
   {/* {console.log('allDatoCmsMainComponent ', data)} */}
     {/* {console.log('allDatoCmsAboutComponent: ', data.allDatoCmsAboutcomponent)} */}
     {/* {console.log('allDatoCmsMySkillsComponent: ', data.allDatoCmsMyskillscomponent)} */}
     {/* {console.log('description cards', data.allDatoCmsDescriptioncardcomponent)} */}
     {/* seo as well from datocms  */}
+    {console.log('titles: ', data.allDatoCmsSectiontitle)}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wrocław', 'Wroclaw']} />
-    <MainImage source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
-    <AboutMe source={data.allDatoCmsAboutcomponent}></AboutMe>    
-    <MySkills source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
-    <MyProjects source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
+    <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
+    <AboutMe  sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
+    <MySkills sectionTitle = {data.allDatoCmsSectiontitle.edges[9].node.title} source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
+    {/* <MyProjects sectionTitle = {data.allDatoCmsSectiontitle.edges[4].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects> */}
     <Contact></Contact>
   </Layout>
 )
@@ -117,76 +120,17 @@ export const query = graphql`{
       }
     }
   }
-  allDatoCmsProjectcontentcomponent{
+  
+  allDatoCmsSectiontitle{
     edges{
       node{
-        # locale
-         projecttitle
-        projectdescription
-        projectimage{
-          fluid(maxWidth: 1000){
-            srcSet
-            aspectRatio
-            sizes
-            base64
-            ...GatsbyDatoCmsFluid
-          }
-          
-        }
-        githublink
-        livelink
+        title
       }
     }
-  }
-
+  }	
+  
 }`
 
 
-// allDatoCmsFootercomponent{
-//   edges{
-//     node{
-//       phoneimage{
-//         url
-//       }
-//       facebookimage{
-//         url
-//       }
-//       linkedinimage{
-//         url
-//       }
-//       instagramimage{
-//         url
-//       }
-//       githubimage{
-//         url
-//       }
-//       atimage{
-//         url
-//       }
-//       twitterimage{
-//         url
-//       }
-//       twitterlink
-//       email
-//       githublink
-//       instagramtext
-//       facebooktext
-//       phonenumber
-//       linkedintext
-//     }
-//   }
-// }
-// allDatoCmsProjectcontentcomponent{
-//   edges{
-//     node{
-//       id
-//       projecttitle
-//       projectdescription
-//       projectimage{
-//         url
-//       }
-//       githublink
-//       livelink
-//     }
-//   }
-// }
+
+
