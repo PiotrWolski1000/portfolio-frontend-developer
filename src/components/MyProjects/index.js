@@ -6,8 +6,8 @@ class index extends Component {
     render() {
         return (
             <Tag.Wrapper>
-                <h1>{this.props.sectionTitle}</h1>
-                <SimpleSlider data={this.props.source}/>
+                <h1 style={{textAlign: 'center'}}>{this.props.sectionTitle}</h1>
+                {/* <SimpleSlider data={this.props.source}/> */}
             </Tag.Wrapper>
         );
     }

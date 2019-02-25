@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export  const MainWrapper = styled.div`
     display: flex;
+    font-family: 'Roboto';
+    /* text-align: left; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -19,6 +21,7 @@ export  const MainWrapper = styled.div`
 export const BottomFooter = styled.div`
     margin-top:150px;
     color: white;
+    
     @media(max-width: 600px){
         font-size:1.1rem;
     }
@@ -45,19 +48,26 @@ export const Wrapper = styled.div`
         grid-template-rows: repeat(2, 1fr);    
     }
     .footerItem {
-        /* padding-left: 50px; */
-        padding-left: 50px;
-        border-left: 2px solid #416B89;
+        padding-left: 20px;
+        border-left: 2px solid rgba(255,255,255, 1);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
             @media (max-width: 600px){
-                /* border-left: none;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #416B89; */
                 font-size: 1.2rem;
                 line-height: 1.2rem;
+                border-left: none;
+                padding-left: 0px;
+                &::after{
+                    content:"";
+                    width: 50%;
+                    padding-bottom: 50px;
+                    border-bottom: 2px solid white;
+                }
+                &:last-child{
+                    border-bottom: none;
+                }
             }
         
         img {
@@ -65,7 +75,6 @@ export const Wrapper = styled.div`
             height: 50px;
         }
         span{
-        /* margin-right: 50pax; */
         display: flex;
         align-items: center;
         justify-content: center;

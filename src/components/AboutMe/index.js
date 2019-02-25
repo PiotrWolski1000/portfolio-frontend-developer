@@ -11,7 +11,7 @@ class index extends Component {
         // console.log(this.props.source)
         return (
             <div>
-                <h1 style={{textAlign: 'center'}}>
+                <h1 style={{marginTop: '50px', textAlign: 'center'}}>
                     {this.props.sectionTitle}
                 </h1>
                 <Tag.Wrapper>

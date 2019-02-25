@@ -70,6 +70,7 @@ export const Wrapper = styled.section`
         margin-top: 1rem;
     }
     form{
+        font-family: 'Roboto';
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
@@ -92,7 +93,7 @@ export const Wrapper = styled.section`
             border-radius: 3px;
             z-index: 2;
             outline: none;
-            border-bottom: 2px solid #E52321;;
+            border-bottom: 2px solid black;
             &::-webkit-input-placeholder {
                 color: grey;
             }
@@ -105,7 +106,6 @@ export const Wrapper = styled.section`
             left: 2px;
             bottom: -29px;
             transition: all 150ms ease-in;
-            /* color: #ffffff; */
             color: black;
             cursor: default;
         }
@@ -126,17 +126,18 @@ export const Wrapper = styled.section`
         }
         button{
             all: initial;
+            font-family: 'Orbitron';
             cursor: pointer;
             height: 55px;
             display: block;
             margin: 0 auto;
             margin-top: 4rem;
-            background-color: #E52321;
+            background-color: white;
+            border: 2px solid black;
             border-radius: 25px;
             text-align: center;
             
-            color: white; 
-            font-size: 1.5rem;
+            font-size: 1rem;
             
             @media (max-width: 500px) {
                 font-size: 1.3rem;
@@ -156,11 +157,12 @@ export const Wrapper = styled.section`
             box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
             outline: none;
             &:hover{
-                text-decoration: underline;
+                border: 2px solid red; 
             }
             ${this}:active{
-                background-color: #CE1715;
+                border: black 2px solid;
                 color: white;
+                background-color: black;
                 text-decoration: none !important;
                 transition: all 0.25s ease;
             }

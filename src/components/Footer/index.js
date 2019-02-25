@@ -6,7 +6,7 @@ class index extends Component {
     const FooterComponent = this.props.data
     return (
         <Tag.MainWrapper>
-        {console.log(FooterComponent)}
+        {/* {console.log(FooterComponent)} */}
                 <Tag.MiniTitle>
                     Social media and useful links           
                 </Tag.MiniTitle>
@@ -19,7 +19,7 @@ class index extends Component {
                             </span>
                         </div>
                         <div className="footerItem">
-                            <img src={FooterComponent.atimage.url} ></img>
+                            <img style={{fill: 'blue!important'}} src={FooterComponent.atimage.url} ></img>
                             <span>
                                 {FooterComponent.email}
                             </span>
@@ -59,7 +59,7 @@ class index extends Component {
                         
                     <Tag.BottomFooter>
                     
-                        © {new Date().getFullYear()}, Built with {` `}
+                        © {new Date().getFullYear()} {` `}
                     
                     </Tag.BottomFooter>   
             </Tag.MainWrapper>

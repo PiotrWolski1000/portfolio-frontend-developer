@@ -1,9 +1,9 @@
 let API_TOKEN = 'be9354083b6bcdd223b7ac822103d2';
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Piotr Wolski`,
+    description: `Piotr Wolski, Frontend Developer in Wroclaw. Contact me, tel.: 724 121 098, email: p.wolski1000@gmail.com.`,
+    author: `Piotr Wolski`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

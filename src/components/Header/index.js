@@ -6,19 +6,19 @@ import Img from 'gatsby-image'
 const navigation = [
   {
     name: 'About',
-    path: '/'
+    path: '#about'
   },
   {
     name: 'Skills',
-    path: '#uber-uns'
+    path: '#skills'
   },
   {
     name: 'Projects',
-    path: '#leistungen'
+    path: '#projects'
   },
   {
     name: 'Contact',
-    path: '#kontakt'
+    path: '#contact'
   }
 ]
 
@@ -31,6 +31,9 @@ class index extends Component {
       collapsed: false,
       path: '/'
     }    
+
+    this.MyStory = React.createRef();
+
   }
 
   componentDidMount = () => {

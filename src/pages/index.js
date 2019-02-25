@@ -13,21 +13,13 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    
-    {/* {console.log('footer data: ', data.allDatoCmsFootercomponent.edges[0].node)} */}
-    {/* {console.log(' allDatoCmsProjectcontentcomponent: ', data.allDatoCmsProjectcontentcomponent)} */}
-  {/* {console.log('allDatoCmsMainComponent ', data)} */}
-    {/* {console.log('allDatoCmsAboutComponent: ', data.allDatoCmsAboutcomponent)} */}
-    {/* {console.log('allDatoCmsMySkillsComponent: ', data.allDatoCmsMyskillscomponent)} */}
-    {/* {console.log('description cards', data.allDatoCmsDescriptioncardcomponent)} */}
-    {/* seo as well from datocms  */}
     {console.log('titles: ', data.allDatoCmsSectiontitle)}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wrocław', 'Wroclaw']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
-    <AboutMe  sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
-    <MySkills sectionTitle = {data.allDatoCmsSectiontitle.edges[9].node.title} source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
-    {/* <MyProjects sectionTitle = {data.allDatoCmsSectiontitle.edges[4].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects> */}
-    <Contact></Contact>
+    <AboutMe id = 'about'  sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
+    <MySkills id = 'skills' sectionTitle = {data.allDatoCmsSectiontitle.edges[3].node.title} source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
+    <MyProjects id = 'projects' sectionTitle = {data.allDatoCmsSectiontitle.edges[1].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
+    <Contact id = 'contact' sectionTitle = {data.allDatoCmsSectiontitle.edges[2].node.title}></Contact>
   </Layout>
 )
 

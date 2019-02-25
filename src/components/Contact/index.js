@@ -1,18 +1,3 @@
-// import React, { Component } from 'react';
-// import * as Tag from './style'
-
-// class index extends Component {
-//     render() {
-//         return (
-//             <Tag.Wrapper>
-//                 contact
-//             </Tag.Wrapper>   
-//        )
-//     }
-// }
-// export default index
-
-
 import * as El from './style'
 import React, { Component } from 'react';
 
@@ -147,8 +132,8 @@ class KontaktForm extends Component {
                         </div>
                     </El.Message>
                     
-                    <h1 style={{color: '#363636'}}>
-                        Kontaktformular
+                    <h1 style={{marginTop: '50px', color: '#363636'}}>
+                        {this.props.sectionTitle}
                     </h1>
 
                     <form
@@ -226,7 +211,7 @@ class KontaktForm extends Component {
                         <button
                             type="submit"
                         >
-                            Nachricht senden
+                            Send message
                         </button>
                     </form>
             </El.Wrapper>
