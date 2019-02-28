@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-export const Wrapper = styled.section`
-    display: block;
+
+export const Wrapper = styled.div`
     width: 100%;
     height: 500px;
     display: flex;

@@ -124,6 +124,23 @@ export const Menu = styled.div`
   }
 `
 
+export const LinkA = styled.a`
+  font-family: 'Orbitron';
+    
+  text-decoration: none;
+  padding: 10px 0 10px 25px;
+  &:link {
+    color: black;
+  }
+  &:visited {
+    color: black;
+  }
+  &:hover{
+    background: black;
+    color: white;
+  }     
+`
+
 export const MainWrapper = styled.header`
   display: block; 
   width: 100%;

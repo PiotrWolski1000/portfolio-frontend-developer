@@ -13,13 +13,23 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    {console.log('titles: ', data.allDatoCmsSectiontitle)}
-    <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wrocław', 'Wroclaw']} />
+    {/* {console.log('titles: ', data.allDatoCmsSectiontitle)} */}
+    <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
-    <AboutMe id = 'about'  sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
-    <MySkills id = 'skills' sectionTitle = {data.allDatoCmsSectiontitle.edges[3].node.title} source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
-    <MyProjects id = 'projects' sectionTitle = {data.allDatoCmsSectiontitle.edges[1].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
-    <Contact id = 'contact' sectionTitle = {data.allDatoCmsSectiontitle.edges[2].node.title}></Contact>
+    <section id = "about">
+      <AboutMe sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
+    </section>
+    <section id ="skills">
+      <MySkills sectionTitle = {data.allDatoCmsSectiontitle.edges[3].node.title} source={data.allDatoCmsMyskillscomponent.edges[0].node} text = {data.allDatoCmsDescriptioncardcomponent.edges}></MySkills>
+    </section>
+
+    <section id="projects">
+      <MyProjects id = 'projects' sectionTitle = {data.allDatoCmsSectiontitle.edges[1].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
+    </section>
+    <section>
+      <Contact sectionTitle = {data.allDatoCmsSectiontitle.edges[2].node.title}></Contact>
+    </section>
+
   </Layout>
 )
 
