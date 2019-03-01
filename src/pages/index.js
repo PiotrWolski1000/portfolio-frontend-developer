@@ -8,11 +8,11 @@ import AboutMe from '../components/AboutMe'
 import MySkills from '../components/MySkills'
 import MyProjects from '../components/MyProjects'
 import Contact from '../components/Contact'
-// import {graphql} from 'gatsby'
 import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
+    {console.log('projekty: ', data.allDatoCmsProjectcontentcomponent)}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
     <section id = "about">
