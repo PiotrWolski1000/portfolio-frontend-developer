@@ -13,8 +13,7 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    {/* {console.log('titles: ', data.allDatoCmsSectiontitle)} */}
-    <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw']} />
+    <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
     <section id = "about">
       <AboutMe sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
@@ -80,37 +79,94 @@ export const query = graphql`{
       node{
       	javascriptimage{
           url
+          format
         }
         html5{
           url
+          format
         }
         css3{
           url
+          format
         }
 
         nodejs{
           url
+          format
         }
         react{
           url
+          format
         }
         npm{
           url
+          format
         }
         photoshop{
           url
+          format
         }
         ubuntuos{
           url
+          format
         }
 
         windowsos{
           url
+          format
         }
 
         github{
           url 
-       }        
+          format
+       }   
+       gatsbyjs{
+         url
+         format
+       }    
+       adobexd{
+         url
+         format
+       }
+        netlify{
+          fixed(width: 100){
+            srcSet
+            src
+            aspectRatio
+            base64
+            ...GatsbyDatoCmsFixed
+          }
+        }
+        styledComponents{
+          fixed(width: 100){
+            srcSet
+            src
+            aspectRatio
+            base64
+            ...GatsbyDatoCmsFixed
+          }
+        }   
+
+        datocms{
+          fixed(width: 100){
+            srcSet
+            src
+            aspectRatio
+            base64
+            ...GatsbyDatoCmsFixed
+          }
+        }
+
+        contentful{
+          fixed(width: 100){
+            srcSet
+            src
+            aspectRatio
+            base64
+            ...GatsbyDatoCmsFixed
+          }
+        }
+
       }   
     }
   }
