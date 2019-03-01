@@ -70,53 +70,61 @@ export default class SimpleSlider extends Component {
             autoplay: true,
         };
         
-        const Description = [
-        {
-                title: this.props.data.edges[0].node.projecttitle, 
-                description: this.props.data.edges[0].node.projectdescription,
-                image: this.props.data.edges[0].node.projectimage,
-                github: this.props.data.edges[0].node.githublink, 
-                livelink: this.props.data.edges[0].node.livelink, 
-        },
-        {
-                title: this.props.data.edges[1].node.projecttitle,
-                description: this.props.data.edges[1].node.projectdescription,
-                image: this.props.data.edges[1].node.projectimage,
-                github: this.props.data.edges[1].node.githublink, 
-                livelink: this.props.data.edges[1].node.livelink,
-        },
-        {
-            title: this.props.data.edges[2].node.projecttitle,
-            description: this.props.data.edges[2].node.projectdescription,
-            image: this.props.data.edges[2].node.projectimage,
-            github: this.props.data.edges[2].node.githublink, 
-            livelink: this.props.data.edges[2].node.livelink,
-        }
-        ]
+        // const Description = [
+        // {
+        //         title: this.props.data.edges[0].node.projecttitle, 
+        //         description: this.props.data.edges[0].node.projectdescription,
+        //         image: this.props.data.edges[0].node.projectimage,
+        //         github: this.props.data.edges[0].node.githublink, 
+        //         livelink: this.props.data.edges[0].node.livelink, 
+        // },
+        // {
+        //         title: this.props.data.edges[1].node.projecttitle,
+        //         description: this.props.data.edges[1].node.projectdescription,
+        //         image: this.props.data.edges[1].node.projectimage,
+        //         github: this.props.data.edges[1].node.githublink, 
+        //         livelink: this.props.data.edges[1].node.livelink,
+        // },
+        // {
+        //     title: this.props.data.edges[2].node.projecttitle,
+        //     description: this.props.data.edges[2].node.projectdescription,
+        //     image: this.props.data.edges[2].node.projectimage,
+        //     github: this.props.data.edges[2].node.githublink, 
+        //     livelink: this.props.data.edges[2].node.livelink,
+        // },
+        // {
+        //     title: this.props.data.edges[3].node.projecttitle,
+        //     description: this.props.data.edges[3].node.projectdescription,
+        //     image: this.props.data.edges[3].node.projectimage,
+        //     github: this.props.data.edges[3].node.githublink, 
+        //     livelink: this.props.data.edges[3].node.livelink,
+        // },
+
+        // ]
                               
         return (
             <Slider {...settings}>
-                {Description.map((item, i) => (
+                {this.props.data.edges.map((item, i) => (
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
                             <div className="wrapperImage">
-                                <img src={item.image.url} width='200px' height='300px' alt="Project image"/>
+                                <img src={item.node.projectimage.url} width='200px' height='300px' alt="Project image"/>
                             </div>
                             <article>
                                 <h2>
-                                    {item.title}
+                                    {item.node.projecttitle}
                                 </h2>
                                 <div>
-                                    {item.description}
+                                    {item.node.projectdescription}
                                 </div>
 
                                 <Links>
-                                    {item.github?(
-                                      <a href = {item.github}>Project's Github repositorium</a>
+                                    {item.node.githublink?(
+                                      <a href = {item.node.githublink}>Project's Github repositorium</a>
                                     ):(null)}
 
-                                    {item.livelink?(
-                                        <a href = {item.livelink}>Demo</a>                                        
+                                    {item.node.livelink?(
+                                        <a href = {item.node.livelink}>Demo</a>                                        
                                     ):(null)}
 
                                 </Links>
