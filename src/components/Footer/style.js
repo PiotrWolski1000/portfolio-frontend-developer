@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export  const MainWrapper = styled.div`
     display: flex;
     font-family: 'Roboto';
-    /* text-align: left; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #011727;
+    background-color: #393E46;
     color: white;
     width: 100%;
     height: auto;

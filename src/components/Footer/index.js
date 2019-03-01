@@ -6,7 +6,6 @@ class index extends Component {
     const FooterComponent = this.props.data
     return (
         <Tag.MainWrapper>
-        {/* {console.log(FooterComponent)} */}
                 <Tag.MiniTitle>
                     Social media and useful links           
                 </Tag.MiniTitle>
