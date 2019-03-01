@@ -29,13 +29,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* @media(max-width: 400px){
-        background: rgba(23, 23, 23, 0.5);
-    } */
   }
   img{
-      /* @media(min-width: 400px){
-      } */
     padding: 0 0.5rem;
   }
   article{
