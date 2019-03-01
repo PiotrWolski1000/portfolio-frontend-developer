@@ -58,7 +58,7 @@ const Layout = ({ children, data }) => (
     render={data => (
       <>
       
-          {console.log('data from layout: ', data.allDatoCmsFootercomponent)}
+          {/* {console.log('data from layout: ', data.allDatoCmsFootercomponent)} */}
         <Header siteTitle={data.site.siteMetadata.title} />
         
           <main>

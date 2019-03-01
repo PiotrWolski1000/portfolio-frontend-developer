@@ -124,7 +124,7 @@ class KontaktForm extends Component {
             <El.Wrapper>
                     <El.Message style={{height: '0px'}} className={this.state.messageSuccessfulSent?'sentMessage':''}>
                         <p style={{display: 'none'}}>
-                            Vielen Dank für Ihre Kontaktaufnahme, wir werden uns in Kürze mit Ihnen in Verbindung setzen.
+                        Thank you for contacting me, I will contact you shortly.
                         </p>
                         <div className={'cross'} onClick={()=>{this.setState({messageSuccessfulSent: false})}}>
                             <div></div>
@@ -152,7 +152,7 @@ class KontaktForm extends Component {
                             name='name'
                             type='text' 
                             value={this.state.name}
-                            placeholder="Name, Firma Name"
+                            placeholder="Name"
                             onFocus={this.activateField}
                             onBlur={this.disableFocus}   
                             onChange={this.onChangeInput}
@@ -164,31 +164,31 @@ class KontaktForm extends Component {
                             name='email' 
                             type="email" 
                             value={this.state.email}
-                            placeholder="E-mail addresse" 
+                            placeholder="Email" 
                             onFocus={this.activateField}
                             onBlur={this.disableFocus}   
                             onChange={this.onChangeInput}
                             required
                         />
                         
-                        <label htmlFor='phone' className={this.state.phoneFieldActive ? "field-active" : ""}>Telefonnummer</label>
+                        <label htmlFor='phone' className={this.state.phoneFieldActive ? "field-active" : ""}>Phone</label>
                         <input 
                             name="phone" 
                             type="tel" 
                             value={this.state.phone}
-                            placeholder="Telefonnnummer"
+                            placeholder="Phone"
                             onFocus={this.activateField}
                             onBlur={this.disableFocus}   
                             onChange={this.onChangeInput}
                             required
                         />
 
-                        <label htmlFor='subject' className={this.state.subjectFieldActive ? "field-active" : ""}>Thema</label>            
+                        <label htmlFor='subject' className={this.state.subjectFieldActive ? "field-active" : ""}>Topic</label>            
                         <input 
                             name="subject" 
                             type="text"
                             value={this.state.subject}
-                            placeholder="Thema"
+                            placeholder="Topic"
                             onFocus={this.activateField}
                             onBlur={this.disableFocus}   
                             onChange={this.onChangeInput}
@@ -202,7 +202,6 @@ class KontaktForm extends Component {
                             type="text" 
                             rows="4" 
                             cols="50" 
-                            placeholder="Nachricht" 
                             onFocus={this.activateField}
                             onBlur={this.disableFocus}   
                             onChange={this.onChangeInput}

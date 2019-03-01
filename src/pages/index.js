@@ -24,7 +24,7 @@ const IndexPage = ({data}) => (
     </section>
 
     <section id="projects">
-      <MyProjects id = 'projects' sectionTitle = {data.allDatoCmsSectiontitle.edges[1].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
+      <MyProjects sectionTitle = {data.allDatoCmsSectiontitle.edges[1].node.title} source={data.allDatoCmsProjectcontentcomponent}></MyProjects>
     </section>
     <section>
       <Contact sectionTitle = {data.allDatoCmsSectiontitle.edges[2].node.title}></Contact>
@@ -131,6 +131,21 @@ export const query = graphql`{
     }
   }	
   
+  allDatoCmsProjectcontentcomponent{
+    edges{
+      node{
+        projecttitle
+        projectdescription
+        projectimage{
+          url
+          width
+          height
+        }
+        githublink
+        livelink
+      }
+    }
+  }
 }`
 
 

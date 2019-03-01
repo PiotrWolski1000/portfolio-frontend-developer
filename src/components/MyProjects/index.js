@@ -3,11 +3,14 @@ import * as Tag from './style'
 import SimpleSlider from '../SimpleSlider'
 
 class index extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <Tag.Wrapper>
                 <h1 style={{textAlign: 'center'}}>{this.props.sectionTitle}</h1>
-                {/* <SimpleSlider data={this.props.source}/> */}
+                <SimpleSlider data={this.props.source}/>
             </Tag.Wrapper>
         );
     }
