@@ -98,7 +98,7 @@ export const Menu = styled.div`
   ul {
     list-style: none;
   }
-  ${Link} {
+  /* ${Link} { */
     font-family: 'Orbitron';
     a{
       text-decoration: none;
@@ -114,7 +114,7 @@ export const Menu = styled.div`
         color: white;
       }    
     }
-  }
+  /* } */
 `
 
 export const LinkA = styled.a`
@@ -138,7 +138,6 @@ export const MainWrapper = styled.header`
   display: block; 
   width: 100%;
   height: auto;
-  z-index: 10;
   /* top: -150px; */
   /* transform: translateY(0px); */
   /* position: fixed;

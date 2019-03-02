@@ -43,8 +43,7 @@ class index extends Component {
       render={data => {
       const { collapsed } = this.state
       return (
-        // className={this.state.hide?"showMenu":"hideMenu"}
-        <Tag.MainWrapper >
+        <Tag.MainWrapper className={this.state.hide?"showMenu":"hideMenu"}>
           <Tag.Wrapper>
               <Link to='/'>
                 <Tag.Logo>
@@ -73,9 +72,9 @@ class index extends Component {
                 {navigation.map((item, i) => {
                   return(
                     <li key={`horizontal_li${i}`}>
-                      <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
+                      <a key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenuForLink} href={item.path}> 
                         {item.name}    
-                      </Link>
+                      </a>
                     </li>)
                 })}
                 
@@ -85,11 +84,11 @@ class index extends Component {
               <Tag.Menu  isVisible={collapsed}>
                 {navigation.map((item, i) => {  
                     return (
-                      <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
+                      <a key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} href={item.path}> 
                         
                         {item.name}
                       
-                      </Link>)
+                      </a>)
                   }
                 )}
               </Tag.Menu>
