@@ -5,9 +5,6 @@ import Img from 'gatsby-image'
 
 
 class index extends Component {
-  constructor(props){
-    super(props)
-  }
   componentDidMount = () => {
     //Thanks to www.mattboldt.com.
     new Typed(".element", {

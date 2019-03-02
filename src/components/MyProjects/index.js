@@ -3,9 +3,6 @@ import * as Tag from './style'
 import SimpleSlider from '../SimpleSlider'
 
 class index extends Component {
-    constructor(props){
-        super(props)
-    }
     render() {
         return (
             <Tag.Wrapper>

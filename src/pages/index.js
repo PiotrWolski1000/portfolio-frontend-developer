@@ -1,18 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import MainImage from '../components/MainImage/'
 import AboutMe from '../components/AboutMe'
 import MySkills from '../components/MySkills'
 import MyProjects from '../components/MyProjects'
 import Contact from '../components/Contact'
-import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    {console.log('projekty: ', data.allDatoCmsProjectcontentcomponent)}
     <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
     <section id = "about">

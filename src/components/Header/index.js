@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import * as Tag from './style'
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image'
 const navigation = [
   {
     name: 'About',
@@ -19,9 +18,7 @@ const navigation = [
   {
     name: 'Contact',
     path: '#contact'
-  }
-]
-
+  }]
 
 class index extends Component {
   constructor(props){
@@ -34,15 +31,13 @@ class index extends Component {
   }
 
   handleCollapseMenuForLink = () => this.setState({collapsed: false})
-
   handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
-
 
   render() {
     return (
       <StaticQuery
-    query={headerQuery}
-    render={data => {
+      query={headerQuery}
+      render={data => {
       const { collapsed } = this.state
       return (
         <Tag.MainWrapper className={this.state.hide?"showMenu":"hideMenu"}>

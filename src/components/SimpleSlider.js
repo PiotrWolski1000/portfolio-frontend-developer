@@ -3,45 +3,47 @@ import Slider from "react-slick";
 import styled from 'styled-components'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Img from 'gatsby-image'
-
 
 const Wrapper = styled.div`
 
     font-family: 'Roboto';
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  display: flex;
-  
-  @media(max-width: 1024px){
-      flex-direction: column;
-  }
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 
-  align-items: center;
+    @media(max-width: 1024px){
+        flex-direction: column;
+    }
 
-
-  &:focus{
-    outline: none !important;
-  }
-  .wrapperImage{
-      display: block;
-      width: 100%;
+    .wrapperImage{
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  img{
-    padding: 0 0.5rem;
-  }
-  article{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items:space-around;
-      padding: 1rem;
-  }
-
-
+    padding: 1rem;
+    }
+    img{
+    display: block;
+    }
+    article{
+        @media(max-width: 1024){
+            width: 100%;
+        }
+        @media(max-width: 1024){
+            width: 50%;
+        }
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:space-around;
+        padding: 1rem;
+    }
+    .description{
+        text-indent: 2rem;
+    }
 `
 const Links = styled.div`
     margin-top: 0.5rem;
@@ -51,13 +53,23 @@ const Links = styled.div`
     align-items: left;
     a{
         margin-top: 1rem;
+        &:link{
+            color: black;
+        }
+        &:visited{
+            color: black;
+        }
+        &:active{
+            color: red;
+        }
+        &:hover{
+            color: red;
+        }
     }
+
 `
 
 export default class SimpleSlider extends Component {
-    constructor(props){
-        super(props)
-    }
     render() {
         const settings = {
             dots: false,
@@ -77,13 +89,13 @@ export default class SimpleSlider extends Component {
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
                             <div className="wrapperImage">
-                                <img src={item.node.projectimage.url} width={item.node.projecttitle==='Chat with socket.io'?'300px':'180px'} height='300px' alt="Project image"/>
+                                <img src={item.node.projectimage.url} width={item.node.projecttitle==='Chat with socket.io'?'300px':'170px'} height='300px' alt="Project image"/>
                             </div>
                             <article>
                                 <h2>
                                     {item.node.projecttitle}
                                 </h2>
-                                <div>
+                                <div className="description">
                                     {item.node.projectdescription}
                                 </div>
 

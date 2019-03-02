@@ -5,10 +5,6 @@ import Img from 'gatsby-image'
 
 class index extends Component {
     render() {
-        
-        // let language = this.props.source.edges.map((item)=>{(item.node.locale === "en")?(item):(null)})
-        // console.log('language: ', language)
-        // console.log(this.props.source)
         return (
             <div>
                 <h1 style={{marginTop: '50px', textAlign: 'center'}}>

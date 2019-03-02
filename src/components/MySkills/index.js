@@ -3,10 +3,6 @@ import * as Tag from './style'
 import Img from 'gatsby-image'
 
 class index extends Component {
-    constructor(props){
-        super(props)
-
-    }
     render() {
         const data = [
             {
@@ -87,9 +83,9 @@ class index extends Component {
                             <div className='flip3D' key={`description_card_flip3d_${i}`}>
                                 <div className='front' key={`description_card_div_front_${i}`}>
                                     {item.link.format === 'svg'?(
-                                        <img style={{width: '100px', height: '100px'}} src={item.link.url} key={`skill_img_${i}`}/>                                        
+                                        <img style={{width: '100px', height: '100px'}} alt = {item.link.alt} src={item.link.url} key={`skill_img_${i}`}/>                                        
                                     ):(
-                                        <Img fixed = {item.link.fixed}/> /* alt={item.link.alt} */
+                                        <Img fixed = {item.link.fixed} alt = {item.link.alt}/> /* alt={item.link.alt} */
                                     )}
                                 </div>
                                 <div key={`description_card_div_back_${i}`} className='back'>

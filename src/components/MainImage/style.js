@@ -4,8 +4,12 @@ import styled from 'styled-components'
 export const Wrapper = styled.section`
     width: 100%;
     background-color: darkorange;
-    /* margin-top: 150px; */
-    
+
+    -moz-box-shadow:0 3px 3px rgba(182, 182, 182, 1.0);
+    -webkit-box-shadow: 0 3px 3px rgba(182, 182, 182, 1.0);
+    box-shadow: 0 3px 3px rgba(182, 182, 182, 1.0);
+
+
     .element{
         position: absolute;
         transform: translateY(-50px);
