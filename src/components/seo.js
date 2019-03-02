@@ -6,11 +6,12 @@ import { StaticQuery, graphql } from "gatsby"
 function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
-        return (
+    query={detailsQuery}
+    render={data => {
+      const metaDescription =
+      description || data.site.siteMetadata.description
+      { console.log('seo props: ', description, lang, meta, keywords, title)}
+      return (
           <Helmet
             htmlAttributes={{
               lang,

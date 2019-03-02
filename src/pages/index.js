@@ -9,7 +9,7 @@ import Contact from '../components/Contact'
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Piotr Wolski" keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
+    <SEO title="Piotr Wolski" description = "Piotr Wolski, JavaScript, react frontend developer from Wroclaw." keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
     <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
     <section id = "about">
       <AboutMe sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
