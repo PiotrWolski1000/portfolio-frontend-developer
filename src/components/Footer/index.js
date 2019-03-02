@@ -16,7 +16,7 @@ class index extends Component {
             span: this.props.data.linkedintext,
             aText: 'LinkedIn profile'
         },{
-            img: this.props.data.facebookimage,
+            img: this.props.data.facebookimfoage,
             span: this.props.data.facebooktext,
             aText: 'Facebook profile'
         },

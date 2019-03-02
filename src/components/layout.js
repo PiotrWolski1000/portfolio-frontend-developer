@@ -23,24 +23,31 @@ const Layout = ({ children, data }) => (
             node{
               phoneimage{
                 url
+                alt
               }
               facebookimage{
                 url
+                alt
               }
               linkedinimage{
                 url
+                alt
               }
               instagramimage{
                 url
+                alt
               }
               githubimage{
                 url
+                alt
               }
               atimage{
                 url
+                alt
               }
               twitterimage{
                 url
+                alt
               }
               twitterlink
               email
