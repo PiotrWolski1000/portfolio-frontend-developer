@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from 'gatsby-link'
 export const Wrapper = styled.div`
     width: 100%;
     height: 150px;
