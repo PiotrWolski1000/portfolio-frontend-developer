@@ -36,33 +36,10 @@ class index extends Component {
 
   }
 
-  // componentDidMount = () => {
-  //   if(window !== 'undefined')
-  //   {
-  //     let prevScrollpos = window.pageYOffset;
-    
-  //     window.onscroll = () => {
-  //       let currentScrollPos = window.pageYOffset;
-  //       if (prevScrollpos > currentScrollPos) {//scroll up
-  //           this.setState({hide: true})
-  //           console.log('w gore, pokaz', this.state.hide)
-  //         } else {//scroll down
-  //           console.log('w dol, hide', this.state.hide)
-  //           this.setState({hide: false})
-  //           // this.setState({collapse: true})
-  //           // handleCollapseMenu()
-  //       }
-  //       prevScrollpos = currentScrollPos;
-  //     }
-  //   }
-  // }
-  
-
-  handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
+  handleCollapseMenu = () => this.setState({collapsed: false})
 
 
   render() {
-    // console.log(window.innerWidth);
     return (
       <StaticQuery
     query={headerQuery}
