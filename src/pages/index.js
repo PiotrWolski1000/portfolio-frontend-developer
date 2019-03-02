@@ -10,7 +10,7 @@ import Contact from '../components/Contact'
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Piotr Wolski" description = "Piotr Wolski, JavaScript, react frontend developer from Wroclaw." keywords={[`javascript`, `developer`, `react`, 'Piotr', 'Wolski', 'Wroclaw', 'student']} />
-    <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture.fluid}></MainImage>
+    <MainImage  source={data.allDatoCmsMaincomponent.edges[0].node.mainpicture}></MainImage>
     <section id = "about">
       <AboutMe sectionTitle = {data.allDatoCmsSectiontitle.edges[0].node.title} source={data.allDatoCmsAboutcomponent}></AboutMe>    
     </section>
@@ -38,6 +38,7 @@ export const query = graphql`{
         locale
         mainpicture{
           
+          alt
           fluid(maxWidth: 1920){
             srcSet
             aspectRatio
@@ -57,6 +58,7 @@ export const query = graphql`{
       node{
       	locale
       	myphoto{
+          alt
           fixed(width: 250){
             srcSet
             src
@@ -75,56 +77,69 @@ export const query = graphql`{
       node{
       	javascriptimage{
           url
+          alt
           format
         }
         html5{
           url
+          alt
           format
         }
         css3{
           url
+          alt
           format
         }
 
         nodejs{
           url
+          alt
           format
         }
         react{
           url
+          alt
           format
         }
         npm{
           url
+          alt
           format
         }
         photoshop{
           url
+          alt
           format
         }
         ubuntuos{
           url
+          alt
           format
         }
 
         windowsos{
           url
+          alt
           format
         }
 
         github{
-          url 
+          url
+          alt
           format
        }   
        gatsbyjs{
          url
+         alt
          format
        }    
        adobexd{
          url
+         alt
          format
        }
         netlify{
+          alt
           fixed(width: 100){
             srcSet
             src
@@ -134,6 +149,7 @@ export const query = graphql`{
           }
         }
         styledComponents{
+          alt
           fixed(width: 100){
             srcSet
             src
@@ -144,6 +160,7 @@ export const query = graphql`{
         }   
 
         datocms{
+          alt
           fixed(width: 100){
             srcSet
             src
@@ -154,6 +171,7 @@ export const query = graphql`{
         }
 
         contentful{
+          alt
           fixed(width: 100){
             srcSet
             src
@@ -190,6 +208,7 @@ export const query = graphql`{
         projectdescription
         projectimage{
           url
+          alt
           width
           height
         }

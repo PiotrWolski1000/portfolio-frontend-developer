@@ -20,7 +20,7 @@ class index extends Component {
   render() {
     return (
       <Tag.Wrapper>
-        <Img width="200px" height="200px" fluid={this.props.source} />
+        <Img width="200px" height="200px" fluid={this.props.source.fluid} alt={this.props.source.alt} />
         <h1 className="element"></h1>
       </Tag.Wrapper>
     );

@@ -13,7 +13,7 @@ class index extends Component {
                 <Tag.Wrapper>
 
                     <Tag.TopLeft>
-                        <Img fixed = {this.props.source.edges[0].node.myphoto.fixed} style={{borderRadius: '300px'}}/>
+                        <Img fixed = {this.props.source.edges[0].node.myphoto.fixed} alt={this.props.source.edges[0].node.myphoto.alt} style={{borderRadius: '300px'}}/>
                     </Tag.TopLeft>
                     <Tag.BottomRight>
                         <p>
