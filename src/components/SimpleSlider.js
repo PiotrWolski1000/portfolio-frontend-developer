@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   line-height: 1.5rem;
   display: flex;
   
-  @media(max-width: 400px){
+  @media(max-width: 1024px){
       flex-direction: column;
   }
 
@@ -65,7 +65,7 @@ export default class SimpleSlider extends Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplaySpeed: 4000,
+            autoplaySpeed: 7000,
             arrows: false,
             autoplay: true,
         };
@@ -77,7 +77,7 @@ export default class SimpleSlider extends Component {
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
                             <div className="wrapperImage">
-                                <img src={item.node.projectimage.url} width='200px' height='300px' alt="Project image"/>
+                                <img src={item.node.projectimage.url} width={item.node.projecttitle==='Chat with socket.io'?'300px':'180px'} height='300px' alt="Project image"/>
                             </div>
                             <article>
                                 <h2>

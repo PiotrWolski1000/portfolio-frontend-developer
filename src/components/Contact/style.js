@@ -92,7 +92,7 @@ export const Wrapper = styled.div`
             padding: 0.3rem 0.2rem;
             border-radius: 3px;
             z-index: 2;
-            outline: none;
+            
             border-bottom: 2px solid black;
             &::-webkit-input-placeholder {
                 color: grey;
@@ -155,7 +155,7 @@ export const Wrapper = styled.div`
             -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
             -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
             box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
-            outline: none;
+            
             &:hover{
                 border: 2px solid red; 
             }

@@ -16,8 +16,8 @@ class index extends Component {
         showCursor: false,
         typeSpeed: 0,
         backSpeed: 0,
-        smartBackspace: true, // this is a default
-        loop: true
+        smartBackspace: true, 
+        loop: true,
         });
   }
   render() {
