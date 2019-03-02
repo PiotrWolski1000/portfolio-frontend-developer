@@ -78,7 +78,7 @@ class index extends Component {
               </Tag.HorizontalMenu>
             </Tag.Wrapper>
 
-              {/* <Tag.Menu  isVisible={collapsed}>
+              <Tag.Menu  isVisible={collapsed}>
                 {navigation.map((item, i) => {  
                     return (
                       <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
@@ -88,7 +88,7 @@ class index extends Component {
                       </Link>)
                   }
                 )}
-              </Tag.Menu> */}
+              </Tag.Menu>
           </Tag.MainWrapper>
         
         )

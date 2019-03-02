@@ -1,10 +1,6 @@
-//name: header compnent styles
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 export const Wrapper = styled.div`
-    /* background: white; */
-    background-color: white;
-
     width: 100%;
     height: 150px;
     font-family: 'Orbitron';
@@ -89,21 +85,49 @@ export const HorizontalMenu = styled.ul`
         
     }
 `
+// export const Menu = styled.div`
+//   width: 100%;
+//   display: flex;
+//   opacity: ${props => props.isVisible ? '1'  : '0'};
+//   flex-direction: column;
+//   visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
+//   height: ${props => props.isVisible ? '180px'  : '0px'};
+//   transition: height 0.5s ease, visibility 0s;
+//   ul {
+//     list-style: none;
+//   }
+
+//   ${Link} {
+//     font-family: 'Orbitron';
+//     a{
+//       text-decoration: none;
+//       padding: 10px 0 10px 25px;
+//       &:link {
+//         color: black;
+//       }
+//       &:visited {
+//         color: black;
+//       }
+//       &:hover{
+//         background: black;
+//         color: white;
+//       }
+       
+//     }
+//   }
+// `
+
 export const Menu = styled.div`
-  /* position: relative;
-  position:  */
-/* position relative added as testesd value */
   width: 100%;
   display: flex;
   opacity: ${props => props.isVisible ? '1'  : '0'};
   flex-direction: column;
   visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
-  height: ${props => props.isVisible ? '180px'  : '0px'};
+  height: ${props => props.isVisible ? '200px'  : '0px'};
   transition: height 0.5s ease, visibility 0s;
   ul {
     list-style: none;
   }
-
   ${Link} {
     font-family: 'Orbitron';
     a{
@@ -118,8 +142,7 @@ export const Menu = styled.div`
       &:hover{
         background: black;
         color: white;
-      }
-       
+      }    
     }
   }
 `
