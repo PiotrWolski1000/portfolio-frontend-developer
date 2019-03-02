@@ -92,29 +92,27 @@ export const Menu = styled.div`
   display: flex;
   opacity: ${props => props.isVisible ? '1'  : '0'};
   flex-direction: column;
-  visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
+  visibility: ${props => props.isVisible ? 'visible !important'  : 'hidden'};
   height: ${props => props.isVisible ? '180px'  : '0px'};
   transition: height 0.5s ease, visibility 0s;
   ul {
     list-style: none;
   }
-  /* ${Link} { */
-    font-family: 'Orbitron';
-    a{
-      text-decoration: none;
-      padding: 10px 0 10px 25px;
-      &:link {
-        color: black;
-      }
-      &:visited {
-        color: black;
-      }
-      &:hover{
-        background: black;
-        color: white;
-      }    
+  font-family: 'Orbitron';
+  a{
+    text-decoration: none;
+    padding: 10px 0 10px 25px;
+    &:link {
+      color: black;
     }
-  /* } */
+    &:visited {
+      color: black;
+    }
+    &:hover{
+      background: black;
+      color: white;
+    }    
+  }
 `
 
 export const LinkA = styled.a`

@@ -81,7 +81,7 @@ class index extends Component {
               </Tag.HorizontalMenu>
             </Tag.Wrapper>
 
-              <Tag.Menu  isVisible={collapsed}>
+              <Tag.Menu  style={{visibility: 'hidden'}}isVisible={collapsed}>
                 {navigation.map((item, i) => {  
                     return (
                       <a key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} href={item.path}> 
