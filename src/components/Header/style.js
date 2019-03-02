@@ -85,37 +85,7 @@ export const HorizontalMenu = styled.ul`
         
     }
 `
-// export const Menu = styled.div`
-//   width: 100%;
-//   display: flex;
-//   opacity: ${props => props.isVisible ? '1'  : '0'};
-//   flex-direction: column;
-//   visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
-//   height: ${props => props.isVisible ? '180px'  : '0px'};
-//   transition: height 0.5s ease, visibility 0s;
-//   ul {
-//     list-style: none;
-//   }
 
-//   ${Link} {
-//     font-family: 'Orbitron';
-//     a{
-//       text-decoration: none;
-//       padding: 10px 0 10px 25px;
-//       &:link {
-//         color: black;
-//       }
-//       &:visited {
-//         color: black;
-//       }
-//       &:hover{
-//         background: black;
-//         color: white;
-//       }
-       
-//     }
-//   }
-// `
 
 export const Menu = styled.div`
   width: 100%;
@@ -123,7 +93,7 @@ export const Menu = styled.div`
   opacity: ${props => props.isVisible ? '1'  : '0'};
   flex-direction: column;
   visibility: ${props => props.isVisible ? 'visible'  : 'hidden'};
-  height: ${props => props.isVisible ? '200px'  : '0px'};
+  height: ${props => props.isVisible ? '180px'  : '0px'};
   transition: height 0.5s ease, visibility 0s;
   ul {
     list-style: none;

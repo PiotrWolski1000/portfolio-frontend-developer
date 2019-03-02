@@ -32,6 +32,10 @@ class index extends Component {
   handleCollapseMenuForLink = () => this.setState({collapsed: false})
   handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
 
+  componentDidMount = () => {
+    this.setState({collapsed: false})
+  }
+
   render() {
     return (
       <StaticQuery
