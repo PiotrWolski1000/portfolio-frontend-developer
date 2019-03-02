@@ -25,13 +25,10 @@ class index extends Component {
     super(props)
     this.state = {
       hide: false,
-      collapsed: true,
+      collapsed: false,
       path: '/'
     }    
   }
-  // componentDidMount = () => {
-  //   this.setState({collapsed: true})
-  // }
   handleCollapseMenuForLink = () => this.setState({collapsed: false})
   handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
 
@@ -42,7 +39,8 @@ class index extends Component {
       render={data => {
       const { collapsed } = this.state
       return (
-        <Tag.MainWrapper className={this.state.hide?"showMenu":"hideMenu"}>
+        // className={this.state.hide?"showMenu":"hideMenu"}
+        <Tag.MainWrapper >
           <Tag.Wrapper>
               <Link to='/'>
                 <Tag.Logo>
@@ -68,32 +66,28 @@ class index extends Component {
                   
 
               <Tag.HorizontalMenu>
-                {
-                  navigation.map((item, i) => {
-                    return (
-                      <li key={`horizontal_li${i}`}>
-                        <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
-                          {item.name}    
-                        </Link>
-                      </li>)
-                    })
-                }
+                {navigation.map((item, i) => {
+                  return(
+                    <li key={`horizontal_li${i}`}>
+                      <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
+                        {item.name}    
+                      </Link>
+                    </li>)
+                })}
                 
               </Tag.HorizontalMenu>
             </Tag.Wrapper>
 
               <Tag.Menu  isVisible={collapsed}>
-                    {
-                      navigation.map((item, i) => {  
-                        return (
-                          <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
-                            
-                            {item.name}
-                          
-                          </Link>)
-                      }
-                  )
-                    }
+                {navigation.map((item, i) => {  
+                    return (
+                      <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
+                        
+                        {item.name}
+                      
+                      </Link>)
+                  }
+                )}
               </Tag.Menu>
           </Tag.MainWrapper>
         
