@@ -62,7 +62,7 @@ class index extends Component {
 
 
   render() {
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     return (
       <StaticQuery
     query={headerQuery}
@@ -99,7 +99,7 @@ class index extends Component {
                   navigation.map((item, i) => {
                     return (
                       <li key={`horizontal_li${i}`}>
-                        <Link key = {`menu_desktop_link${i}`} onClick={window&&window.innerWidth<400?this.handleCollapseMenu:(null)} to={item.path}> 
+                        <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenu} to={item.path}> 
                           {item.name}    
                         </Link>
                       </li>)
@@ -113,7 +113,7 @@ class index extends Component {
                     {
                       navigation.map((item, i) => {  
                         return (
-                          <Link key = {`menu_link${i}`} onClick={window&&window.innerWidth<400?this.handleCollapseMenu:(null)} to={item.path}> 
+                          <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenu} to={item.path}> 
                             
                             {item.name}
                           
