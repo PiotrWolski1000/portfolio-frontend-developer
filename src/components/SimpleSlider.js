@@ -89,7 +89,7 @@ export default class SimpleSlider extends Component {
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
                             <div className="wrapperImage">
-                                <img src={item.node.projectimage.url} width={item.node.projecttitle==='Chat with socket.io'?'300px':'170px'} height='300px' alt="Project image"/>
+                                <img src={item.node.projectimage.url} width={item.node.projecttitle==='Chat with socket.io'?'300px':'170px'} height='300px' alt={item.node.projectimage.alt}/>
                             </div>
                             <article>
                                 <h2>

@@ -30,7 +30,7 @@ class index extends Component {
             span: this.props.data.twitterlink,
             aText: 'Twitter profile'
         }]
-    // const FooterComponent = this.props.data
+        
         return (
             <Tag.MainWrapper>
 

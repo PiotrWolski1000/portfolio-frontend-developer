@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Portfolio frontend developer",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Portfolio frontend developer",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Piotr Wolski <p.wolski1000@gmail.com>",
   "dependencies": {
     "gatsby": "^2.1.15",
     "gatsby-image": "^2.0.29",
