@@ -31,12 +31,11 @@ class index extends Component {
       collapsed: false,
       path: '/'
     }    
-
-    this.MyStory = React.createRef();
-
   }
 
-  handleCollapseMenu = () => this.setState({collapsed: false})
+  handleCollapseMenuForLink = () => this.setState({collapsed: false})
+
+  handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
 
 
   render() {
@@ -76,7 +75,7 @@ class index extends Component {
                   navigation.map((item, i) => {
                     return (
                       <li key={`horizontal_li${i}`}>
-                        <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenu} to={item.path}> 
+                        <Link key = {`menu_desktop_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
                           {item.name}    
                         </Link>
                       </li>)
@@ -90,7 +89,7 @@ class index extends Component {
                     {
                       navigation.map((item, i) => {  
                         return (
-                          <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenu} to={item.path}> 
+                          <Link key = {`menu_link${i}`} onClick={this.handleCollapseMenuForLink} to={item.path}> 
                             
                             {item.name}
                           
