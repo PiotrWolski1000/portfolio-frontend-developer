@@ -24,8 +24,9 @@ module.exports = {
         start_url: `/`,
         background_color: `#393E46`,
         theme_color: `#393E46`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/manifest-logo.png`, // This path is relative to the root of the site.
+        include_favicon: true,
       },
       resolve: `gatsby-source-datocms`,
       options: {

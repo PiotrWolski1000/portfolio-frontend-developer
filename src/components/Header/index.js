@@ -25,11 +25,13 @@ class index extends Component {
     super(props)
     this.state = {
       hide: false,
-      collapsed: false,
+      collapsed: true,
       path: '/'
     }    
   }
-
+  // componentDidMount = () => {
+  //   this.setState({collapsed: true})
+  // }
   handleCollapseMenuForLink = () => this.setState({collapsed: false})
   handleCollapseMenu = () => this.setState(prevState => ({collapsed: !prevState.collapsed}))
 
