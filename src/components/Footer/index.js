@@ -33,34 +33,32 @@ class index extends Component {
         
         return (
             <Tag.MainWrapper>
-            {console.log('img1: ', data[3].img.url)}
+                <Tag.MiniTitle>
+                    Social media and useful links           
+                </Tag.MiniTitle>
 
-                    <Tag.MiniTitle>
-                        Social media and useful links           
-                    </Tag.MiniTitle>
+                <Tag.Wrapper>
 
-                    <Tag.Wrapper>
+                    {data.map((item, i) => (
+                        <div className="footerItem" key={`footer_item_${i}`}>
+                            <img src={item.img.url} alt={item.img.alt} key={`img_footer_item${i}`}></img>
+                            <span key={`footer_span_${i}`}>
+                                {item.span[0] === '+' || item.span === 'p.wolski1000@gmail.com' ?(
+                                    item.span
+                                ):(
+                                    <a key = {`footer_link_${i}`} href={item.span}>{item.aText}</a>
+                                )}
+                            </span>  
+                        </div>
+                    ))}
+                </Tag.Wrapper>
 
-                        {data.map((item, i) => (
-                            <div className="footerItem" key={`footer_item_${i}`}>
-                                {/* <img src={item.img.url} alt={item.img.alt} key={`img_footer_item${i}`}></img> */}
-                                <span key={`footer_span_${i}`}>
-                                    {item.span[0] === '+' || item.span === 'p.wolski1000@gmail.com' ?(
-                                        item.span
-                                    ):(
-                                        <a key = {`footer_link_${i}`} href={item.span}>{item.aText}</a>
-                                    )}
-                                </span>  
-                            </div>
-                        ))}
-                    </Tag.Wrapper>
-
-                    <Tag.BottomFooter>
-                    
-                        © {new Date().getFullYear()} {` `}
-                    
-                    </Tag.BottomFooter>   
-                </Tag.MainWrapper>
+                <Tag.BottomFooter>
+                
+                    © {new Date().getFullYear()} {` `}
+                
+                </Tag.BottomFooter>   
+            </Tag.MainWrapper>
         )
     }
 }
