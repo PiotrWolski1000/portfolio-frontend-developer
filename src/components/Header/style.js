@@ -10,10 +10,12 @@ export const Wrapper = styled.div`
 `
 
 export const Logo = styled.svg`
-     height: 200px; 
-     min-width: 300px; 
+     height: 150px !important;
+     width: 250px !important; 
+
      pointer-events: none;
      font-size: 2rem;
+    text-decoration: none !important;
 `
 
 export const HamburgerMenu = styled.div`

@@ -49,7 +49,7 @@ class index extends Component {
                 <Tag.Logo>
                   <text 
                     x="25"
-                    y="120" 
+                    y="96" 
                     fill="black" 
                     fontFamily='Orbitron'
                     >
