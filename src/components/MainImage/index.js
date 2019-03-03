@@ -11,8 +11,8 @@ class index extends Component {
         strings: ["Hi, my name is Piotr Wolski.", "And I'm a frontend developer. ", "Welcome on my website"],
         cursorChar: '_',
         showCursor: false,
-        typeSpeed: 0,
-        backSpeed: 0,
+        typeSpeed: 50,
+        backSpeed: 20,
         smartBackspace: true, 
         loop: true,
         });
@@ -27,17 +27,3 @@ class index extends Component {
   }
 }
 export default index;
-
-
-// const index = (source) => {
-
-//     return (
-//     <Tag.Wrapper>
-//       <Img fluid={source.source} />
-//       <div className="element" style={{zIndex: 11111111}}>
-        
-//       </div>
-//     </Tag.Wrapper>
-//   )
-// }  
-
