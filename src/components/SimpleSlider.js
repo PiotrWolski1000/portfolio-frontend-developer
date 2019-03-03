@@ -26,6 +26,11 @@ const Wrapper = styled.div`
     }
     img{
         display: block;
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: 300px;
     }
     article{
         @media(max-width: 1024){
@@ -89,7 +94,7 @@ export default class SimpleSlider extends Component {
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
                             <div className="wrapperImage">
-                                <img src={item.node.projectimage.url} width='250px' height='300px' alt={item.node.projectimage.alt}/>
+                                <img src={item.node.projectimage.url} alt={item.node.projectimage.alt}/>
                             </div>
                             <article>
                                 <h2>
