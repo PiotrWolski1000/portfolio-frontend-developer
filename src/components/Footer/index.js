@@ -16,7 +16,7 @@ class index extends Component {
             span: this.props.data.linkedintext,
             aText: 'LinkedIn profile'
         },{
-            img: this.props.data.facebookimfoage,
+            img: this.props.data.facebookimage,
             span: this.props.data.facebooktext,
             aText: 'Facebook profile'
         },
@@ -33,15 +33,17 @@ class index extends Component {
         
         return (
             <Tag.MainWrapper>
+            {console.log('img1: ', data[3].img.url)}
 
                     <Tag.MiniTitle>
                         Social media and useful links           
                     </Tag.MiniTitle>
 
                     <Tag.Wrapper>
+
                         {data.map((item, i) => (
                             <div className="footerItem" key={`footer_item_${i}`}>
-                                <img src={item.img.url} alt={item.img.alt} key={`img_footer_item${i}`}></img>
+                                {/* <img src={item.img.url} alt={item.img.alt} key={`img_footer_item${i}`}></img> */}
                                 <span key={`footer_span_${i}`}>
                                     {item.span[0] === '+' || item.span === 'p.wolski1000@gmail.com' ?(
                                         item.span
