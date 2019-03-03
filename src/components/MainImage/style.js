@@ -19,6 +19,7 @@ export const Wrapper = styled.section`
         font-size: 1rem;
         z-index: 1;
         color: white;
+        
         @media(min-width: 500px){
             font-size: 1.5rem !important;
             transform: translateY(-50px);        
