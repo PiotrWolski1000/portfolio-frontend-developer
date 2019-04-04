@@ -195,7 +195,7 @@ class KontaktForm extends Component {
                             required
                         />
 
-                        <label htmlFor='message' className={this.state.messageFieldActive ? "field-active" : ""}>Nachricht</label>
+                        <label htmlFor='message' className={this.state.messageFieldActive ? "field-active" : ""}>Message</label>
                         <textarea
                             value={this.state.message}
                             name="message" 
