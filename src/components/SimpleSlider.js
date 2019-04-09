@@ -89,7 +89,7 @@ export default class SimpleSlider extends Component {
                       
         return (
             <Slider {...settings}>
-                {this.props.data.edges.map((item, i) => (
+                {this.props.data.edges.reverse().map((item, i) => (
                     
                     <div key={`div_slider_${i}`}>
                         <Wrapper>
