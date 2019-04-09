@@ -83,7 +83,7 @@ export default class extends React.Component {
         <Carousel>
             
               {
-                  this.props.data.map((point)=>{return(
+                  this.props.data.reverse().map((point)=>{return(
                   <Item 
                     key={point.node.id} 
                     style={
